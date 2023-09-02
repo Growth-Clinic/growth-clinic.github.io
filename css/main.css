@@ -1223,7 +1223,7 @@ html {
     }
 
     .case-study-logo__item img {
-        width: fit-content;
+        width: 100%;
     }
 
     #piggyvest, #paystack, #reliance {
