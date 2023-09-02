@@ -773,7 +773,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 30%;
+    width: 28%;
 }
 
 .value-item img {
