@@ -1220,6 +1220,7 @@ html {
     .case-study-logo__item {
         height: 8rem;
         padding: 0 2rem;
+        width: fit-content;
     }
 
     #piggyvest, #paystack, #reliance {
