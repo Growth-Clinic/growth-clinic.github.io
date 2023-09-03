@@ -1224,7 +1224,6 @@ html {
     }
 
     .case-study-logo__item img {
-        width: fit-content;
         max-width: 100%;
     }
 
