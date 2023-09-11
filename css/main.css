@@ -608,10 +608,11 @@ html {
     display: flex;
     border-radius: 2.4rem;
     background: rgba(229, 229, 229, 0.10);
-    justify-content: space-around;
+    gap: 8%;
 }
 
 .program-exp-wrap img {
+    width: 36%;
     height: 56rem;
     background-color: white;
     padding: 2rem;
@@ -619,7 +620,7 @@ html {
 }
 
 .program-exp-wrap ul {
-    width: 58rem;
+    width: 56%;
     height: 56rem;
     display: flex;
     flex-direction: column;
@@ -638,6 +639,24 @@ html {
 
 .program-exp-wrap ul li::marker {
    color: #DBCFB0;
+}
+
+.pricing-callout-wrap button {
+    width: fit-content;
+    padding: 0 4rem;
+}
+
+.pricing-callout {
+    margin-bottom: 2.8rem;
+}
+
+.pricing-callout strong {
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.pricing-callout p {
+    font-weight: bold;
 }
 
 .learning-exp {
@@ -850,7 +869,6 @@ html {
 
 
 
-
   
 
 
@@ -995,16 +1013,6 @@ html {
     .program-exp-wrap {
         margin: 0 6rem;
         padding: 2.4rem;
-        justify-content: space-between;
-    }
-
-    .program-exp-wrap img {
-        height: 48rem;
-    }
-
-    .program-exp-wrap ul {
-        width: 46rem;
-        height: 48rem;
     }
 
     .learning-exp {
@@ -1349,6 +1357,7 @@ html {
 
     .program-exp-wrap img {
         height: 32rem;
+        width: 100%;
     }
 
     .program-exp-wrap ul {
@@ -1362,6 +1371,10 @@ html {
         line-height: 2.4rem;
         padding-inline: 0rem;
         margin-inline-start: 1rem;
+    }
+
+    .pricing-callout strong {
+        font-size: 2.4rem;
     }
 
     .learning-exp {
