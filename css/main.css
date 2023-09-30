@@ -309,6 +309,31 @@ html {
     box-shadow: 4px 4px 0 1px #098743;
 }
 
+.secondary-button {
+    width: 24rem;
+    border-radius: 0.8rem;
+    color: #098743;
+    background-color: #FFF;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+    height: 6rem;
+    cursor: pointer;
+    text-align: center;
+    border: 1.5px solid #098743;
+}
+
+.secondary-button:hover {
+    background-color: #098743;
+    color: #fff;
+}
+
+.hero-button-group {
+    display: flex;
+    column-gap: 2.4rem;
+}
+
 .hero-img {
     max-height: 62rem;
 }
@@ -975,6 +1000,10 @@ html {
         max-width: 40rem;
     }
 
+    .hero-button-group {
+        column-gap: 1.6rem;
+    }
+
     .hero-img {
         max-height: 46rem;
     }
@@ -1250,7 +1279,15 @@ html {
     .hero-button {
         font-size: 1.6rem;
         width: 20rem;
+    }
 
+    .secondary-button {
+        font-size: 1.6rem;
+    }
+
+    .hero-button-group {
+        flex-wrap: wrap;
+        row-gap: 1.6rem;
     }
 
     .grey-section {
