@@ -283,7 +283,7 @@ html {
     font-weight: 400;
     line-height: 3.6rem;
     padding-bottom: 4rem;
-    text-wrap: balance;
+    text-wrap: pretty;
 }
 
 .hero-button {
