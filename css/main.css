@@ -269,9 +269,11 @@ html {
 
 .container {
     width: 100%;
+    max-width: 1440px;
     height: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 
@@ -1110,10 +1112,21 @@ html {
     flex-wrap: wrap;
 }
 
+@media screen and (max-width: 1200px) {
+    .navbar__list-item {
+        padding-left: 2.2rem; /* Reduced from 4.4rem */
+    }
+    
+    .navbar__list-item a {
+        font-size: 1.6rem; /* Slightly smaller from 1.8rem */
+    }
+}
 
-
-
-
+@media screen and (max-width: 1024px) {
+    .navbar__list-item {
+        padding-left: 1.6rem;
+    }
+}
 
 @media screen and (max-width: 1024px) {
 
@@ -1860,6 +1873,14 @@ html {
     width: auto;
     max-width: fit-content;
     text-align: center;
+}
+
+.program-status, .program-link {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .status-badge-container {
