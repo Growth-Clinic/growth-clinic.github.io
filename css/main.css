@@ -91,23 +91,109 @@
 
 
 /* remove default styling a.k.a reset */
-html, body, div, span,applet,
-object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,
-acronym,address,big,button,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,
-sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,
-tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer, header,
-hgroup,menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+button,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
     vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: flex;
 }
 
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
 }
@@ -160,7 +246,12 @@ table {
     box-sizing: border-box;
 }
 
-html, input, select, textarea, button, a {
+html,
+input,
+select,
+textarea,
+button,
+a {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -170,7 +261,8 @@ a {
 }
 
 html {
-    font-size: 62.5%; /* base font size */
+    font-size: 62.5%;
+    /* base font size */
 }
 
 /* css starts here */
@@ -215,12 +307,14 @@ html {
     font-family: 'Cerebri Sans Pro';
     font-size: 1.8rem;
     font-weight: 600;
-    color: #1D1E2C; 
+    color: #1D1E2C;
+    padding: 0.8rem 1.2rem;
+    white-space: nowrap;
 }
 
 .navbar__list-item a:hover {
     color: #20BF55;
-    
+
 }
 
 .navbar__list-item button {
@@ -273,7 +367,7 @@ html {
     color: #1D1E2C;
     font-size: 5.4rem;
     line-height: 7.1rem;
-    font-weight: 800; 
+    font-weight: 800;
     padding-bottom: 2.4rem;
 }
 
@@ -307,6 +401,29 @@ html {
     background-color: #fff;
     border: 1px solid #098743;
     box-shadow: 4px 4px 0 1px #098743;
+}
+
+
+/* For button text */
+.hero-button,
+.footer-callout button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
+    background-color: #098743;
+    color: #FFF;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    /* Reduced from 0.18rem */
+    text-transform: uppercase;
+    height: 6rem;
+    cursor: pointer;
+    padding: 0 3rem;
+    /* Ensure consistent horizontal padding */
+    min-width: fit-content;
+    /* Ensure button grows to fit text */
 }
 
 .secondary-button {
@@ -350,8 +467,8 @@ html {
     text-align: center;
     font-size: 4.4rem;
     font-weight: bold;
-    line-height: 5.7rem; 
-} 
+    line-height: 5.7rem;
+}
 
 .growth-process-wrap {
     padding: 8rem 0;
@@ -386,7 +503,7 @@ html {
     text-align: center;
     font-size: 1.8rem;
     font-weight: normal;
-    line-height: 2.4rem; 
+    line-height: 2.4rem;
 }
 
 .growth-process__callout {
@@ -439,7 +556,7 @@ html {
     width: 68rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 2.4rem; 
+    gap: 2.4rem;
     justify-content: flex-end
 }
 
@@ -455,15 +572,22 @@ html {
     flex-grow: 1;
 }
 
-#piggyvest, #paystack, #reliance {
+#piggyvest,
+#paystack,
+#reliance {
     height: 4rem;
 }
 
-#rise, #simpu, #backdrop, #eskimi {
+#rise,
+#simpu,
+#backdrop,
+#eskimi {
     height: 2.8rem;
 }
 
-#andela , #moni, #noja {
+#andela,
+#moni,
+#noja {
     height: 5rem;
 }
 
@@ -475,7 +599,10 @@ html {
     height: 8rem;
 }
 
-#printivo, #turaco, #sidebrief, #kuda {
+#printivo,
+#turaco,
+#sidebrief,
+#kuda {
     height: 3rem;
 }
 
@@ -591,7 +718,7 @@ html {
 }
 
 .footer__sub-menu li {
-   padding-left: 4rem;
+    padding-left: 4rem;
 }
 
 .footer__sub-menu li a {
@@ -625,7 +752,7 @@ html {
     font-size: 2.8rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 3.6rem; 
+    line-height: 3.6rem;
 }
 
 .program-exp-wrap {
@@ -664,7 +791,7 @@ html {
 }
 
 .program-exp-wrap ul li::marker {
-   color: #DBCFB0;
+    color: #DBCFB0;
 }
 
 .pricing-callout-wrap button {
@@ -717,7 +844,8 @@ html {
 }
 
 .skill-img {
-    border-radius: 0.2rem;;
+    border-radius: 0.2rem;
+    ;
     background: rgba(250, 250, 250, 0.10);
     padding: 1rem;
 }
@@ -773,7 +901,7 @@ html {
     display: flex;
     column-gap: 4rem;
     margin-top: 6rem;
-    justify-content:center ;
+    justify-content: center;
 }
 
 .how-payment-item {
@@ -963,7 +1091,8 @@ html {
     line-height: 2.4rem;
 }
 
-#buildtgdr , #pincub {
+#buildtgdr,
+#pincub {
     height: 10rem;
 }
 
@@ -983,10 +1112,10 @@ html {
 
 
 
-  
 
 
-@media screen and  (max-width: 1024px) {
+
+@media screen and (max-width: 1024px) {
 
     .navbar-container {
         padding: 0 6rem;
@@ -1064,23 +1193,25 @@ html {
         border-radius: 1.2rem;
         padding: 0 2.4rem;
     }
-    
-    #piggyvest, #paystack, #reliance {
+
+    #piggyvest,
+    #paystack,
+    #reliance {
         height: 3rem;
     }
-    
+
     #rise {
         height: 2.2rem;
     }
-    
+
     #andela {
         height: 4rem;
     }
-    
+
     #elpadrino {
         height: 5rem;
     }
-    
+
     #devcenter {
         height: 6rem;
     }
@@ -1127,7 +1258,7 @@ html {
     .mini-hero {
         padding: 6rem;
     }
-    
+
     .program-exp-wrap {
         margin: 0 6rem;
         padding: 2.4rem;
@@ -1192,7 +1323,7 @@ html {
     .mobile-navbar {
         display: block;
     }
-    
+
     .mobile-navbar-trigger {
         cursor: pointer;
         display: inline-block;
@@ -1235,7 +1366,6 @@ html {
         padding: 0 3rem;
         position: absolute;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .1)
-
     }
 
     .navbar__list-item {
@@ -1336,7 +1466,8 @@ html {
         line-height: 4rem;
     }
 
-    .arrow-svg, .scribble-svg {
+    .arrow-svg,
+    .scribble-svg {
         display: none;
     }
 
@@ -1369,27 +1500,37 @@ html {
         max-width: 100%;
     }
 
-    #piggyvest, #paystack, #reliance {
+    #piggyvest,
+    #paystack,
+    #reliance {
         height: 2rem;
     }
-    
-    #rise, #simpu, #backdrop, #eskimi {
+
+    #rise,
+    #simpu,
+    #backdrop,
+    #eskimi {
         height: 2rem;
     }
-    
-    #andela, #moni, #noja {
+
+    #andela,
+    #moni,
+    #noja {
         height: 3rem;
     }
-    
+
     #elpadrino {
         height: 4rem;
     }
-    
+
     #devcenter {
         height: 4rem;
     }
 
-    #printivo, #turaco, #sidebrief, #kuda {
+    #printivo,
+    #turaco,
+    #sidebrief,
+    #kuda {
         height: 2rem;
     }
 
@@ -1618,7 +1759,7 @@ html {
     .youtube-video iframe {
         border-radius: 1.6rem;
     }
-    
+
     .mini-hero-img {
         width: 100%;
     }
@@ -1711,27 +1852,35 @@ html {
 /* Program status indicators and program-specific styles */
 .program-status {
     display: inline-block;
-    padding: 4px 10px;
-    border-radius: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
     font-size: 14px;
     font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 15px auto 12px;
     width: auto;
-    max-width: 200px;
-  }
-  
-  .program-status.active {
+    max-width: fit-content;
+    text-align: center;
+}
+
+.status-badge-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.program-status.active {
     background-color: #20BF55;
     color: white;
-  }
-  
-  .program-status.coming-soon {
+}
+
+.program-status.coming-soon {
     background-color: #F09524;
     color: white;
-  }
-  
-  .coming-soon-badge {
+}
+
+.coming-soon-badge {
     background-color: #F09524;
     color: white;
     padding: 8px 16px;
@@ -1739,201 +1888,201 @@ html {
     display: inline-block;
     margin-top: 10px;
     font-weight: bold;
-  }
-  
-  .program-link {
+}
+
+.program-link {
     display: inline-block;
     margin-top: 8px;
     color: #20BF55;
     font-weight: 600;
     text-decoration: none;
-  }
-  
-  .program-link:hover {
+}
+
+.program-link:hover {
     text-decoration: underline;
-  }
-  
-  /* Waitlist form styling */
-  .waitlist-form {
+}
+
+/* Waitlist form styling */
+.waitlist-form {
     max-width: 500px;
     margin: 40px auto;
     padding: 30px;
     background: rgba(229, 229, 229, 0.10);
     border-radius: 16px;
-  }
-  
-  .waitlist-form input {
+}
+
+.waitlist-form input {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
     border-radius: 8px;
     border: 2px solid #E5E5E5;
     box-sizing: border-box;
-  }
-  
-  .waitlist-form button {
+}
+
+.waitlist-form button {
     width: 100%;
     margin-top: 16px;
-  }
-  
-  .program-preview {
+}
+
+.program-preview {
     margin-top: 40px;
-  }
-  
-  /* Media queries for responsive design */
-  @media screen and (max-width: 768px) {
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
     .waitlist-form {
-      padding: 20px;
-      margin: 30px auto;
+        padding: 20px;
+        margin: 30px auto;
     }
-    
+
     .program-status {
-      font-size: 12px;
-      padding: 3px 8px;
+        font-size: 12px;
+        padding: 3px 8px;
     }
-    
+
     .coming-soon-badge {
-      font-size: 14px;
-      padding: 6px 12px;
+        font-size: 14px;
+        padding: 6px 12px;
     }
-  }
+}
 
 
 
-  .mental-model-section {
-  padding: 8rem 12rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.mental-model-section {
+    padding: 8rem 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section-title {
-  font-size: 4.4rem;
-  font-weight: 700;
-  color: #1D1E2C;
-  margin-bottom: 2rem;
-  text-align: center;
+    font-size: 4.4rem;
+    font-weight: 700;
+    color: #1D1E2C;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .section-intro {
-  font-size: 2.4rem;
-  max-width: 800px;
-  text-align: center;
-  margin-bottom: 6rem;
-  color: #3D3D3D;
+    font-size: 2.4rem;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 6rem;
+    color: #3D3D3D;
 }
 
 .mental-model-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 4rem;
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+    width: 100%;
 }
 
 .mental-model-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .mental-model-item img {
-  height: 100px;
-  margin-bottom: 2rem;
+    height: 100px;
+    margin-bottom: 2rem;
 }
 
 .mental-model-item h3 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #1D1E2C;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1D1E2C;
 }
 
 .mental-model-item p {
-  font-size: 1.6rem;
-  color: #3D3D3D;
+    font-size: 1.6rem;
+    color: #3D3D3D;
 }
 
 
 
 .framework-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 3rem;
-  margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
 }
 
 .framework-item {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 2rem;
-  border-radius: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    border-radius: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .framework-item img {
-  height: 8rem;
-  margin-bottom: 1.6rem;
+    height: 8rem;
+    margin-bottom: 1.6rem;
 }
 
 .framework-item h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #1D1E2C;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1D1E2C;
 }
 
 .framework-item p {
-  font-size: 1.4rem;
-  color: #3D3D3D;
+    font-size: 1.4rem;
+    color: #3D3D3D;
 }
 
 .program-note {
-  text-align: center;
-  margin-top: 4rem;
-  font-size: 1.8rem;
-  color: #3D3D3D;
-  font-weight: 500;
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.8rem;
+    color: #3D3D3D;
+    font-weight: 500;
 }
 
 
 
 .learning-exp-img-wrap {
-  margin-top: 6rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.4rem;
+    margin-top: 6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.4rem;
 }
 
 .skill-img {
-  border-radius: 8px;
-  background: rgba(250, 250, 250, 0.15);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    border-radius: 8px;
+    background: rgba(250, 250, 250, 0.15);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skill-img img {
-  width: 100%;
-  max-width: 180px;
-  height: auto;
-  background-color: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .skill-img p {
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 2.4rem;
-  text-align: center;
-  width: 100%;
-  padding: 1rem;
-  background: rgba(250, 250, 250, 0.10);
-  border-radius: 4px;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(250, 250, 250, 0.10);
+    border-radius: 4px;
 }
