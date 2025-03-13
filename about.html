@@ -43,60 +43,57 @@
         <!-- navbar -->
         <div class="navbar-container">
             <nav class="navbar">
-                <div>
+                <!-- Logo -->
+                <div class="navbar-logo-container">
                     <a href="index.html">
                         <img class="navbar-logo" src="img/gc-logo.svg" height="40px" alt="Growth Clinic Logo">
                     </a>
                 </div>
-        
-                <div class="main-navbar">
-                    <ul class="navbar__menu">
-                        <!-- Programs Dropdown -->
-                        <li class="navbar__list-item dropdown">
-                            <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                                Programs <span class="dropdown-arrow">▼</span>
-                            </a>
+                
+                <!-- Desktop Menu -->
+                <div class="navbar-menu">
+                    <ul class="navbar-links">
+                        <li class="navbar-item dropdown">
+                            <a href="#" class="dropdown-toggle">Programs <span class="dropdown-arrow">▼</span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
                                 <li><a href="career-accelerator.html">Career Accelerator</a></li>
                                 <li><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
                             </ul>
                         </li>
-                        <li class="navbar__list-item"><a href="hangouts.html">Hangouts</a></li>
-                        <li class="navbar__list-item"><a href="about.html">About</a></li>
-                        <li class="navbar__list-item"><a
-                                href="mailto:growthclinic@gmail.com?subject=I have an enquiry about Growth Clinic">Contact</a>
-                        </li>
-                        <li class="navbar__list-item"><a href="job-search-accelerator.html"><button>get started</button></a>
-                        </li>
+                        <li class="navbar-item"><a href="hangouts.html">Hangouts</a></li>
+                        <li class="navbar-item"><a href="about.html">About</a></li>
+                        <li class="navbar-item"><a href="mailto:growthclinic@gmail.com">Contact</a></li>
                     </ul>
+                    
+                    <a href="job-search-accelerator.html" class="cta-button">Get Started</a>
                 </div>
-        
-                <div class="mobile-navbar">
-                    <div id="mobile-nav-trigger" class="mobile-navbar-trigger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-toggle" id="mobile-nav-trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
-        
-            <!-- Mobile dropdown menu structure-->
-            <ul class="mobile-navbar-menu" id="mobile-nav-menu">
-                <li class="navbar__list-item mobile-dropdown">
-                    <a href="#" class="mobile-dropdown-toggle">Programs <span class="dropdown-arrow">▼</span></a>
-                    <ul class="mobile-dropdown-menu">
-                        <li><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
-                        <li><a href="career-accelerator.html">Career Accelerator</a></li>
-                        <li><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
-                    </ul>
-                </li>
-                <li class="navbar__list-item"><a href="hangouts.html">Hangouts</a></li>
-                <li class="navbar__list-item"><a href="about.html">About</a></li>
-                <li class="navbar__list-item"><a
-                        href="mailto:growthclinic@gmail.com?subject=I have an enquiry about Growth Clinic">Contact</a></li>
-                <li class="navbar__list-item"><a href="job-search-accelerator.html"><button>get started</button></a></li>
-            </ul>
+            
+            <!-- Mobile Menu (Hidden by default) -->
+            <div class="mobile-menu" id="mobile-nav-menu">
+                <ul class="mobile-links">
+                    <li class="mobile-item dropdown">
+                        <a href="#" class="dropdown-toggle">Programs <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
+                            <li><a href="career-accelerator.html">Career Accelerator</a></li>
+                            <li><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                        </ul>
+                    </li>
+                    <li class="mobile-item"><a href="hangouts.html">Hangouts</a></li>
+                    <li class="mobile-item"><a href="about.html">About</a></li>
+                    <li class="mobile-item"><a href="mailto:growthclinic@gmail.com">Contact</a></li>
+                    <li class="mobile-item"><a href="job-search-accelerator.html" class="cta-button">Get Started</a></li>
+                </ul>
+            </div>
         </div>
 
         <!-- mini hero -->
