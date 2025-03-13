@@ -48,42 +48,55 @@
                         <img class="navbar-logo" src="img/gc-logo.svg" height="40px" alt="Growth Clinic Logo">
                     </a>
                 </div>
-
+        
                 <div class="main-navbar">
                     <ul class="navbar__menu">
-                        <li class="navbar__list-item"><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
-                        <li class="navbar__list-item"><a href="career-accelerator.html">Career Accelerator</a></li>
-                        <li class="navbar__list-item"><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                        <!-- Programs Dropdown -->
+                        <li class="navbar__list-item dropdown">
+                            <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                                Programs <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
+                                <li><a href="career-accelerator.html">Career Accelerator</a></li>
+                                <li><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                            </ul>
+                        </li>
                         <li class="navbar__list-item"><a href="hangouts.html">Hangouts</a></li>
                         <li class="navbar__list-item"><a href="about.html">About</a></li>
                         <li class="navbar__list-item"><a
-                                href="mailto: growthclinic@gmail.com?subject = I have an enquiry about Growth Clinic">Contact</a>
+                                href="mailto:growthclinic@gmail.com?subject=I have an enquiry about Growth Clinic">Contact</a>
                         </li>
-                        <li class="navbar__list-item"><a href="job-search-accelerator.html"><button>get started</button></a></li>
+                        <li class="navbar__list-item"><a href="job-search-accelerator.html"><button>get started</button></a>
+                        </li>
                     </ul>
                 </div>
-
+        
                 <div class="mobile-navbar">
-
                     <div id="mobile-nav-trigger" class="mobile-navbar-trigger">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-
-                    <ul class="mobile-navbar-menu" id="mobile-nav-menu">
-                        <li class="navbar__list-item"><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
-                        <li class="navbar__list-item"><a href="career-accelerator.html">Career Accelerator</a></li>
-                        <li class="navbar__list-item"><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
-                        <li class="navbar__list-item"><a href="hangouts.html">Hangouts</a></li>
-                        <li class="navbar__list-item"><a href="about.html">About</a></li>
-                        <li class="navbar__list-item"><a
-                                href="mailto: growthclinic@gmail.com?subject = I have an enquiry about Growth Clinic">Contact</a>
-                        </li>
-                        <li class="navbar__list-item"><a href="job-search-accelerator.html"><button>get started</button></a></li>
-                    </ul>
                 </div>
             </nav>
+        
+            <!-- Mobile dropdown menu structure-->
+            <ul class="mobile-navbar-menu" id="mobile-nav-menu">
+                <li class="navbar__list-item mobile-dropdown">
+                    <a href="#" class="mobile-dropdown-toggle">Programs <span class="dropdown-arrow">▼</span></a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
+                        <li><a href="career-accelerator.html">Career Accelerator</a></li>
+                        <li><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                    </ul>
+                </li>
+                <li class="navbar__list-item"><a href="hangouts.html">Hangouts</a></li>
+                <li class="navbar__list-item"><a href="about.html">About</a></li>
+                <li class="navbar__list-item"><a
+                        href="mailto:growthclinic@gmail.com?subject=I have an enquiry about Growth Clinic">Contact</a></li>
+                <li class="navbar__list-item"><a href="job-search-accelerator.html"><button>get started</button></a></li>
+            </ul>
         </div>
 
         <!-- hero -->
