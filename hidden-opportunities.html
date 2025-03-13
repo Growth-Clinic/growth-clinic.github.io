@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Generate personalized search formulas to find hidden job opportunities others miss. Growth Clinic's free tool for serious job seekers.">
+    <meta name="keywords" content="Hidden Jobs, Job Search Tool, Search Formula Generator, Growth Clinic, Career Tools">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hidden Opportunity Search Formula Generator - Growth Clinic</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hidden Opportunity Search Formula Generator - Growth Clinic"/>
+    <meta property="og:image" content="img/website-share-image.png"/>
+    <meta property="og:description" content="Generate personalized search formulas to find job opportunities that never reach job boards. Discover the hidden job market with our free tool."/>
+    <meta property="og:url" content="https://growthclinic.xyz/hidden-opportunities"/>
+    <meta property="og:type" content="website"/>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <!-- Favicon - Simplified -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <style>
+        /* Styles specific to the tool */
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem;
+            border-radius: 1.6rem;
+            background: rgba(229, 229, 229, 0.10);
+            margin-bottom: 8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1D0D3D;
+        }
+        
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: 0.8rem;
+            border: 2px solid #E5E5E5;
+            font-size: 1.6rem;
+            font-family: 'Cerebri Sans Pro', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, 
+        .form-group select:focus {
+            outline: none;
+            border-color: #20BF55;
+            box-shadow: 0 0 0 2px rgba(32, 191, 85, 0.1);
+        }
+        
+        .hint {
+            font-size: 1.4rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .switch-container {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 5rem;
+            height: 2.4rem;
+            margin-right: 1rem;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 3.4rem;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 1.6rem;
+            width: 1.6rem;
+            left: 0.4rem;
+            bottom: 0.4rem;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: #20BF55;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(2.6rem);
+        }
+        
+        .switch-label {
+            font-size: 1.6rem;
+            color: #1D0D3D;
+        }
+        
+        .spinner {
+            display: none;
+            margin: 2rem auto;
+            border: 0.4rem solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 0.4rem solid #20BF55;
+            width: 3rem;
+            height: 3rem;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .results {
+            display: none;
+            margin-top: 4rem;
+        }
+        
+        .results h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1D0D3D;
+            margin-bottom: 2rem;
+        }
+        
+        .result-item {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background-color: rgba(229, 229, 229, 0.10);
+            border-radius: 0.8rem;
+            border-left: 0.4rem solid #20BF55;
+        }
+        
+        .result-title {
+            font-weight: bold;
+            font-size: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #1D0D3D;
+        }
+        
+        .copy-btn {
+            background-color: transparent;
+            border: 1px solid #20BF55;
+            color: #20BF55;
+            padding: 0.5rem 1rem;
+            border-radius: 0.4rem;
+            cursor: pointer;
+            font-size: 1.4rem;
+            transition: all 0.2s ease;
+            font-family: 'Cerebri Sans Pro', sans-serif;
+        }
+        
+        .copy-btn:hover {
+            background-color: #20BF55;
+            color: white;
+        }
+        
+        .result-content {
+            padding: 1.5rem;
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            border: 1px solid #E5E5E5;
+        }
+        
+        .result-item p {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #3D3D3D;
+        }
+        
+        .email-capture {
+            margin-top: 4rem;
+            padding: 3rem;
+            background-color: rgba(32, 191, 85, 0.1);
+            border-radius: 1.6rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .email-capture h3 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1D0D3D;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 1.5rem;
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+        
+        .email-form input {
+            flex: 1;
+            padding: 1.2rem;
+            border-radius: 0.8rem;
+            border: 2px solid #E5E5E5;
+            font-size: 1.6rem;
+            font-family: 'Cerebri Sans Pro', sans-serif;
+        }
+        
+        .success-message {
+            background-color: rgba(32, 191, 85, 0.1);
+            border-left: 0.4rem solid #20BF55;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 0.4rem;
+            display: none;
+            text-align: center;
+            font-size: 1.6rem;
+            color: #1D0D3D;
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .tool-container {
+                padding: 2rem;
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .result-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .copy-btn {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- navbar - copy from your existing pages -->
+        <div class="navbar-container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <div class="navbar-logo-container">
+                    <a href="index.html">
+                        <img class="navbar-logo" src="img/gc-logo.svg" height="40px" alt="Growth Clinic Logo">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="navbar-menu">
+                    <ul class="navbar-links">
+                        <li class="navbar-item dropdown">
+                            <a href="#" class="dropdown-toggle">Programs <span class="dropdown-arrow">▼</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
+                                <li><a href="career-accelerator.html">Career Accelerator</a></li>
+                                <li><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                            </ul>
+                        </li>
+                        <li class="navbar-item"><a href="hangouts.html">Hangouts</a></li>
+                        <li class="navbar-item"><a href="about.html">About</a></li>
+                        <li class="navbar-item"><a href="mailto:growthclinic@gmail.com">Contact</a></li>
+                    </ul>
+                    
+                    <a href="job-search-accelerator.html" class="cta-button">Get Started</a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-toggle" id="mobile-nav-trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu (Hidden by default) -->
+            <div class="mobile-menu" id="mobile-nav-menu">
+                <ul class="mobile-links">
+                    <li class="mobile-item dropdown">
+                        <a href="#" class="dropdown-toggle">Programs <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
+                            <li><a href="career-accelerator.html">Career Accelerator</a></li>
+                            <li><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                        </ul>
+                    </li>
+                    <li class="mobile-item"><a href="hangouts.html">Hangouts</a></li>
+                    <li class="mobile-item"><a href="about.html">About</a></li>
+                    <li class="mobile-item"><a href="mailto:growthclinic@gmail.com">Contact</a></li>
+                    <li class="mobile-item"><a href="job-search-accelerator.html" class="cta-button">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- mini hero -->
+        <div class="mini-hero">
+            <h1>Hidden Opportunity Search Formula Generator</h1>
+            <p>Create personalized search formulas to find job opportunities<br>
+               that others miss completely.</p>
+        </div>
+
+        <!-- Tool section -->
+        <div class="tool-container">
+            <div class="form-group">
+                <label for="jobRole">Job Role</label>
+                <input type="text" id="jobRole" placeholder="e.g., Product Designer, Data Analyst">
+                <p class="hint">Enter your target job title or role</p>
+            </div>
+
+            <div class="form-group">
+                <label for="alternativeTitle">Alternative Titles (Optional)</label>
+                <input type="text" id="alternativeTitle" placeholder="e.g., UX Designer, UI Designer">
+                <p class="hint">Other similar job titles, separated by commas</p>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="e.g., Lagos, Remote, Nigeria">
+                <p class="hint">Your preferred work location or 'Remote'</p>
+            </div>
+
+            <div class="form-group">
+                <label for="industry">Industry (Optional)</label>
+                <input type="text" id="industry" placeholder="e.g., Healthcare, Fintech, Education">
+                <p class="hint">Target industry if you have a preference</p>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Experience Level</label>
+                <select id="experience">
+                    <option value="entry">Entry Level (0-2 years)</option>
+                    <option value="mid" selected>Mid Level (2-5 years)</option>
+                    <option value="senior">Senior Level (5+ years)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exclusions">Exclude Terms (Optional)</label>
+                <input type="text" id="exclusions" placeholder="e.g., freelance, contract, internship">
+                <p class="hint">Terms you want to exclude from your search</p>
+            </div>
+
+            <div class="switch-container">
+                <label class="switch">
+                    <input type="checkbox" id="recentOnly" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="switch-label">Only show recent opportunities (last 30 days)</span>
+            </div>
+
+            <div class="form-group" style="margin-top: 3rem;">
+                <button class="hero-button" id="generateBtn">Generate Search Formulas</button>
+            </div>
+
+            <div class="spinner" id="spinner"></div>
+
+            <div class="results" id="results">
+                <h2>Your Personalized Search Formulas</h2>
+                
+                <div class="result-item">
+                    <div class="result-title">
+                        <span>LinkedIn Boolean Search</span>
+                        <button class="copy-btn" data-target="linkedin-result">Copy</button>
+                    </div>
+                    <p>Use this formula directly in LinkedIn's search bar to find relevant opportunities:</p>
+                    <div class="result-content" id="linkedin-result"></div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-title">
+                        <span>Google Hidden Jobs Search</span>
+                        <button class="copy-btn" data-target="google-result">Copy</button>
+                    </div>
+                    <p>Paste this into Google to find job listings across multiple platforms:</p>
+                    <div class="result-content" id="google-result"></div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-title">
+                        <span>Company Career Pages Search</span>
+                        <button class="copy-btn" data-target="company-result">Copy</button>
+                    </div>
+                    <p>Use this to find openings directly on company websites:</p>
+                    <div class="result-content" id="company-result"></div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-title">
+                        <span>Recent Funding Search</span>
+                        <button class="copy-btn" data-target="funding-result">Copy</button>
+                    </div>
+                    <p>Find companies that recently received funding (they're likely to hire):</p>
+                    <div class="result-content" id="funding-result"></div>
+                </div>
+            </div>
+
+            <div class="email-capture" id="emailCapture" style="display: block; text-align: center;">
+                <h3>Get Advanced Search Strategies</h3>
+                <p style="font-size: 1.8rem; margin-bottom: 2rem;">Receive our complete Hidden Opportunity toolkit with step-by-step guides</p>
+                
+                <a href="https://growthclinic.kit.com/487edb8ba4?utm_source=website&utm_medium=hidden_opportunities&utm_campaign=search_toolkit" class="hero-button" target="_blank">
+                    Get Your Search Toolkit
+                </a>
+            </div>
+        </div>
+
+        <!-- callout section -->
+        <div class="footer-callout__wrap">
+            <div class="footer-callout">
+                <h5>
+                    Ready to transform your entire job search approach?<br>
+                    Join our Job Search Accelerator program.
+                </h5>
+                <button class="hero-button" onclick="window.location.href='job-search-accelerator.html'">
+                    learn more
+                </button>
+            </div>
+        </div>
+
+        <!-- footer area - copy from your existing pages -->
+        <div class="footer-wrap">
+            <div class="footer-top">
+                <div class="footer__brand">
+                    <img src="img/gc-logo.svg" alt="growth clinic logo">
+
+                    <p>
+                        Empowering individuals and communities with personalized mental models
+                        to grow their career, business and finance.
+                    </p>
+
+                    <h6>
+                        Subscribe to our newsletter to stay updated.
+                         We don't spam.
+                    </h6>
+
+                    <button class="hero-button" onclick="window.location.href='https://eepurl.com/dsyom1'"> 
+                        subscribe
+                    </button>
+
+                </div>
+                <div class="footer__link">
+                    <div class="footer__link-section">
+                        <h6>Programs</h6>
+                        <ul>
+                            <li class="footer__link-item"><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
+                            <li class="footer__link-item"><a href="career-accelerator.html">Career Accelerator</a></li>
+                            <li class="footer__link-item"><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                            <li class="footer__link-item"><a href="hangouts.html">Hangouts</a></li>
+                            <li class="footer__link-item"><a href="about.html">About</a></li>
+                            <li class="footer__link-item"><a href="mailto: growthclinic@gmail.com?subject = I have an enquiry about Growth Clinic">Contact</a></li>
+                            <li class="footer__link-item"><a href="https://medium.com/growthclinic">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__link-section">
+                        <h6>Follow us</h6>
+                        <ul>
+                            <li class="footer__link-item"><a href="https://www.linkedin.com/company/growthclinic/">LinkedIn</a></li>
+                            <li class="footer__link-item"><a href="https://twitter.com/growthclinic">Twitter</a></li>
+                            <li class="footer__link-item"><a href="https://community.growthclinic.xyz/">Discourse</a></li>
+                            <li class="footer__link-item"><a href="https://www.instagram.com/growthclinic/">Instagram</a></li>
+                            <li class="footer__link-item"><a href="https://www.facebook.com/growthclinicNG">Facebook</a></li>
+                            <li class="footer__link-item"><a href="https://www.youtube.com/@GrowthClinic_">Youtube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    Copyright © 2023 Growth Clinic, 
+                    All rights reserved. Made with Love 💚
+                </p>
+                
+                <ul class="footer__sub-menu">
+                    <li><a href="https://community.growthclinic.xyz/tos" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+                    <li><a href="https://community.growthclinic.xyz/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml','1385529');
+    </script>
+    <!-- End MailerLite Universal -->
+</body>
+</html>
