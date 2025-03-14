@@ -1,0 +1,248 @@
+/* Add these CSS styles to your existing CSS */
+
+/* Enhanced multi-select styling */
+select[multiple] {
+    height: auto;
+    min-height: 120px;
+    padding: 0.5rem;
+  }
+  
+  select[multiple] option {
+    padding: 0.5rem;
+    margin-bottom: 0.2rem;
+    border-radius: 0.3rem;
+  }
+  
+  select[multiple] option:checked {
+    background-color: rgba(32, 191, 85, 0.2);
+    color: #104738;
+  }
+  
+  /* Improved form groups for new elements */
+  .form-group.inline-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .form-group.inline-group > div {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  /* Result categories */
+  .result-category {
+    margin-top: 2rem;
+    border-left: 4px solid #20BF55;
+    padding-left: 1rem;
+  }
+  
+  .result-category h3 {
+    color: #104738;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .result-item {
+    position: relative;
+  }
+  
+  .result-effectiveness {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background-color: rgba(32, 191, 85, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    color: #104738;
+  }
+  
+  /* Tool tips */
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+  
+  .tooltip-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-color: #E5E5E5;
+    color: #1D0D3D;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    background-color: #1D0D3D;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 1.3rem;
+    font-weight: normal;
+    line-height: 1.5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1D0D3D transparent transparent transparent;
+  }
+  
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Helper tag styles - for job markets, effectiveness, etc. */
+  .tag {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tag.high {
+    background-color: rgba(32, 191, 85, 0.1);
+    color: #104738;
+  }
+  
+  .tag.medium {
+    background-color: rgba(176, 206, 93, 0.1);
+    color: #5A6B2D;
+  }
+  
+  .tag.low {
+    background-color: rgba(237, 146, 36, 0.1);
+    color: #A95E17;
+  }
+  
+  /* Improved result presentation */
+  .formula-summary {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #666;
+  }
+  
+  .formula-summary .dot {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: #20BF55;
+    margin-right: 0.5rem;
+  }
+  
+  /* Responsive improvements */
+  @media screen and (max-width: 768px) {
+    .formula-summary {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .result-effectiveness {
+      position: static;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    
+    .tooltip-text {
+      width: 200px;
+    }
+  }
+
+  /* Button alignment fixes - add to enhanced-styles.css or directly to search-guide.html */
+
+/* Fix for hero button centering and consistent styling */
+.hero-button, 
+.secondary-button,
+.cta-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  font-family: 'Cerebri Sans Pro', sans-serif;
+}
+
+/* Make buttons properly centered with consistent height */
+a.hero-button,
+button.hero-button {
+  height: 6rem;
+  min-width: fit-content; 
+  max-width: 30rem;
+  padding: 0 3rem;
+  text-transform: uppercase;
+}
+
+a.secondary-button,
+button.secondary-button {
+  height: 6rem;
+  min-width: fit-content;
+  max-width: 30rem;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+/* Fix for content overlay button */
+.content-overlay .hero-button {
+  margin: 0 auto;
+}
+
+/* Reduce extra margin space on some buttons */
+.mini-hero .secondary-button,
+.mini-hero .hero-button {
+  margin-top: 2rem;
+}
+
+/* Specifically target email signup form buttons */
+.email-signup-form .hero-button {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  max-width: 25rem;
+}
+
+/* For mobile adjustment */
+@media screen and (max-width: 768px) {
+  a.hero-button,
+  button.hero-button,
+  a.secondary-button,
+  button.secondary-button {
+    width: 100%;
+    padding: 0 2rem;
+    max-width: none;
+  }
+}
