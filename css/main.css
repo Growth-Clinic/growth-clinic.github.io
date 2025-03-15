@@ -1453,7 +1453,41 @@ html {
 
 }
 
+/* Media queries for responsive design */
 @media screen and (max-width: 768px) {
+
+    .mental-model-section {
+        padding: 4rem 3rem;
+    }
+    
+    .mental-model-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .mental-model-item {
+        margin-bottom: 1rem;
+    }
+    
+    .section-intro {
+        font-size: 2rem;
+        max-width: 100%;
+    }
+
+    .waitlist-form {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .program-status {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+
+    .coming-soon-badge {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
 
     .hero-section {
         padding: 0 3rem;
@@ -2026,26 +2060,6 @@ html {
     margin-top: 40px;
 }
 
-/* Media queries for responsive design */
-@media screen and (max-width: 768px) {
-    .waitlist-form {
-        padding: 20px;
-        margin: 30px auto;
-    }
-
-    .program-status {
-        font-size: 12px;
-        padding: 3px 8px;
-    }
-
-    .coming-soon-badge {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
-}
-
-
-
 .mental-model-section {
     padding: 8rem 12rem;
     display: flex;
@@ -2081,6 +2095,7 @@ html {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 .mental-model-item img {
@@ -2188,24 +2203,40 @@ html {
 /* Improved media queries for better responsiveness */
 @media screen and (max-width: 1200px) {
     .learning-exp-img-wrap {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for large tablets/small desktops */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media screen and (max-width: 992px) {
     .learning-exp-img-wrap {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* Extra small devices */
 @media screen and (max-width: 576px) {
     .learning-exp {
-        padding: 3rem 2rem; /* Reduce padding further on very small screens */
+        padding: 3rem 2rem;
     }
     
     .skill-img img {
-        width: 100px; /* Slightly smaller images on very small screens */
+        width: 100px;
         height: 100px;
+    }
+
+    .mental-model-section {
+        padding: 3rem 2rem;
+    }
+    
+    .mental-model-grid {
+        gap: 2.5rem;
+    }
+    
+    .mental-model-item img {
+        height: 80px;
+    }
+    
+    .section-title {
+        font-size: 3.6rem;
     }
 }
