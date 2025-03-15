@@ -1011,7 +1011,7 @@ html {
     font-style: italic;
     line-height: 1.4;
     text-align: center;
-    width: 100%; /* Full width */
+    width: 100%;
 }
 
 .skill-img p:not(.framework-description) {
@@ -1751,7 +1751,8 @@ html {
     }
 
     .learning-exp-img-wrap {
-        gap: 1.6rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
         width: 100%;
     }
 
@@ -1800,9 +1801,9 @@ html {
     }
 
     .skill-img {
-        width: 46%;
-        max-width: 50%;
-        margin-bottom: 30px;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 2rem;
     }
 
     .skill-img img {
@@ -2182,4 +2183,29 @@ html {
     padding: 1rem;
     background: rgba(250, 250, 250, 0.10);
     border-radius: 4px;
+}
+
+/* Improved media queries for better responsiveness */
+@media screen and (max-width: 1200px) {
+    .learning-exp-img-wrap {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for large tablets/small desktops */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .learning-exp-img-wrap {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 576px) {
+    .learning-exp {
+        padding: 3rem 2rem; /* Reduce padding further on very small screens */
+    }
+    
+    .skill-img img {
+        width: 100px; /* Slightly smaller images on very small screens */
+        height: 100px;
+    }
 }
