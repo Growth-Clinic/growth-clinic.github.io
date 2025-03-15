@@ -393,3 +393,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all links that point to external sites
+  const externalLinks = document.querySelectorAll('a[href^="http"], a[href^="https"], a[href^="mailto:"], a[href*="forms.gle"]');
+  
+  // Skip links that point to your own domain
+  const yourDomain = 'growthclinic.xyz';
+  
+  externalLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    
+    // Don't modify links to your own domain
+    if (href.indexOf(yourDomain) === -1) {
+      // Add target and rel attributes for security best practices
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+  
+  // Specifically handle form links and social media links that should always open in new tabs
+  const formLinks = document.querySelectorAll('a[href*="forms.gle"], a[href*="eepurl.com"]');
+  const socialLinks = document.querySelectorAll('.footer__link-item a[href*="linkedin"], .footer__link-item a[href*="twitter"], .footer__link-item a[href*="instagram"], .footer__link-item a[href*="facebook"], .footer__link-item a[href*="youtube"], .footer__link-item a[href*="discord"]');
+  
+  const linksToOpenInNewTab = [...formLinks, ...socialLinks];
+  
+  linksToOpenInNewTab.forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+});
