@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Find hidden job opportunities, create perfectly tailored applications, and track your job search progress - all in one browser extension. Developed by Growth Clinic.">
+  <meta name="keywords" content="JobRelay, Job Search Extension, Hidden Job Opportunities, Growth Clinic, Firefox Extension, Resume Management">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JobRelay - Find Hidden Jobs, Land More Interviews | Growth Clinic</title>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="JobRelay - Find Hidden Jobs, Land More Interviews | Growth Clinic"/>
+  <meta property="og:image" content="img/website-share-image.png"/>
+  <meta property="og:description" content="Discover hidden job opportunities, create perfectly tailored applications, and track your job search progress - all in one Firefox extension."/>
+  <meta property="og:url" content="https://growthclinic.xyz/jobrelay"/>
+  <meta property="og:type" content="website"/>
+  
+  <!-- Favicon - Simplified -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5RGTTD2YL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q5RGTTD2YL');
+  </script>
+  
+  <style>
+    /* CSS Variables from Growth Clinic style guide */
+    :root {
+      --gc-pastel: #20BF55;     /* Primary brand color - used for CTAs and highlights */
+      --gc-dartmouth: #104738;   /* Secondary brand color - used for hover states */
+      --gc-black: #1D0D3D;      /* Text color */
+      --gc-white: #FFFFFF;      /* Background color */
+      --gc-dutch: #B0CE5D;      /* Accent color */
+      --gc-carrot: #F09524;     /* Warning/notification color */
+      --gc-chestnut: #954738;   /* Error color */
+      --gc-light-grey: rgba(229, 229, 229, 0.10);  /* Background accent */
+    }
+
+    /* Font definitions */
+    @font-face {
+      font-family: 'CerebriSansPro';
+      src: url('/web/css/font/CerebriSansPro-Regular.woff2') format('woff2'),
+           url('/web/css/font/CerebriSansPro-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'CerebriSansPro';
+      src: url('/web/css/font/CerebriSansPro-Bold.woff2') format('woff2'),
+           url('/web/css/font/CerebriSansPro-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    /* General styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'CerebriSansPro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: var(--gc-black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: var(--gc-black);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      color: var(--gc-pastel);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--gc-dartmouth);
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--gc-pastel);
+      color: var(--gc-white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .button:hover {
+      background-color: var(--gc-dartmouth);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(32, 191, 85, 0.2);
+      text-decoration: none;
+    }
+
+    .button-secondary {
+      background-color: var(--gc-white);
+      color: var(--gc-pastel);
+      border: 2px solid var(--gc-pastel);
+    }
+
+    .button-secondary:hover {
+      background-color: var(--gc-pastel);
+      color: var(--gc-white);
+    }
+
+    .firefox-required {
+      display: inline-block;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: #666;
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-alt {
+      background-color: #f9f9f9;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-2 {
+      margin-bottom: 2rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 4rem;
+    }
+
+    /* Header styles */
+    header {
+      background-color: var(--gc-white);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 6rem 0;
+      background-color: #f5f9ff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-carousel {
+      width: 45%;
+      max-width: 500px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-image {
+      display: none;
+      width: 100%;
+      height: auto;
+      border: 1px solid #eaeaea;
+    }
+
+    .hero-image.active {
+      display: block;
+    }
+
+    .free-badge {
+      background-color: rgba(32, 191, 85, 0.1);
+      border-left: 4px solid #20BF55;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .free-badge span {
+      display: inline-block;
+      background-color: #20BF55;
+      color: white;
+      font-weight: bold;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+    }
+
+    .free-badge p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    
+    @keyframes fadeCarousel {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      20% { opacity: 1; }
+      30% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    
+    @media (max-width: 992px) {
+      .hero-flex {
+        flex-direction: column;
+      }
+      
+      .hero-content {
+        max-width: 100%;
+        text-align: center;
+      }
+      
+      .hero-carousel {
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+
+    /* Problem-Solution section */
+    .card {
+      background-color: var(--gc-white);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    .problem-solution {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .problem-card h3 {
+      color: var(--gc-pastel);
+    }
+
+    .problem-card p {
+      margin-bottom: 1rem;
+    }
+
+    /* Features section */
+    .features {
+      margin-top: 3rem;
+    }
+
+    .feature {
+      display: flex;
+      margin-bottom: 3rem;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background-color: rgba(32, 191, 85, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.5rem;
+    }
+
+    .feature-icon svg {
+      width: 30px;
+      height: 30px;
+      color: var(--gc-pastel);
+    }
+
+    .feature-content h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Installation steps */
+    .steps {
+      counter-reset: step;
+      margin-top: 3rem;
+    }
+
+    .step {
+      display: flex;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background-color: var(--gc-pastel);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gc-white);
+      font-weight: bold;
+      margin-right: 1.5rem;
+    }
+
+    .step-content h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Benefits */
+    .benefits {
+      margin-top: 3rem;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .benefit svg {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      color: var(--gc-pastel);
+      margin-right: 1rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .testimonial {
+      position: relative;
+      padding-top: 1.5rem;
+    }
+
+    .testimonial:before {
+      content: '"';
+      font-size: 4rem;
+      color: var(--gc-pastel);
+      opacity: 0.2;
+      position: absolute;
+      top: -1rem;
+      left: -0.5rem;
+    }
+
+    .testimonial-content {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+    }
+
+    /* FAQ */
+    .faq {
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      margin-bottom: 2rem;
+    }
+
+    .faq-question {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--gc-black);
+    }
+
+    .faq-answer {
+      color: #555;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 4rem 0;
+      background-color: #f5f9ff;
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+
+    .value-proposition {
+      background-color: rgba(32, 191, 85, 0.08);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem auto;
+      max-width: 600px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #104738;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      display: inline-block;
+    }
+
+    .feature-list li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+      text-align: left;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: #20BF55;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    .footer-wrap {
+      background-color: #222222;
+      width: 100%;
+    }
+
+    .footer-top {
+      padding: 6rem 0;
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .footer__brand {
+      width: 50%;
+    }
+
+    .footer__brand p {
+      color: #E5E5E5;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      width: 80%;
+      padding-top: 1rem;
+    }
+
+    .footer__brand h6 {
+      color: #FFF;
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+      width: 80%;
+    }
+
+    .footer-button {
+      display: inline-block;
+      width: fit-content;
+      padding: 0.75rem 1.5rem;
+      background-color: #098743;
+      color: #FFF;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05rem;
+      text-transform: uppercase;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .footer-button:hover {
+      background-color: #15A64A;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer__link {
+      display: flex;
+      column-gap: 5rem;
+    }
+
+    .footer__link-section h6 {
+      color: #FFF;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__link-section ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer__link-item {
+      padding: 0.5rem 0;
+      list-style: none;
+    }
+
+    .footer__link-item a {
+      color: #E5E5E5;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      text-decoration: none;
+    }
+
+    .footer__link-item a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .copyright {
+      color: #E5E5E5;
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    .footer__sub-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    .footer__sub-menu li {
+      padding-left: 2rem;
+    }
+
+    .footer__sub-menu li a {
+      color: #E5E5E5;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    .footer__sub-menu li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero {
+        padding: 4rem 0;
+      }
+      
+      .hero-content {
+        max-width: 100%;
+      }
+      
+      .hero-image {
+        display: none;
+      }
+
+      .footer-top {
+        padding: 4rem 2rem;
+        flex-direction: column;
+      }
+
+      .footer__brand, .footer__link {
+        width: 100%;
+      }
+
+      .footer__brand {
+        margin-bottom: 3rem;
+      }
+
+      .footer__link {
+        column-gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .section {
+        padding: 3rem 0;
+      }
+     
+      .footer__link {
+        flex-direction: column;
+        row-gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .copyright {
+        margin-bottom: 1rem;
+      }
+
+      .footer__sub-menu {
+        justify-content: center;
+      }
+
+      .footer__sub-menu li {
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="https://growthclinic.xyz">
+          <img src="img/gc-logo.svg" alt="Growth Clinic" class="logo">
+        </a>
+        <a href="#cta" class="button">Install JobRelay</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-flex">
+        <div class="hero-content">
+          <h1>Find Hidden Jobs, Land More Interviews with JobRelay</h1>
+          <p>The Firefox extension that transforms your job search with AI-powered tools and advanced tracking. Discover opportunities others miss, create perfectly tailored applications, and never lose track of your job search progress.</p>
+          <div class="free-badge">
+            <span>100% FREE</span>
+            <p>Get professional job search tools that others charge for - completely free!</p>
+          </div>
+          <a href="#cta" class="button">Install JobRelay for Firefox</a>
+          <p class="firefox-required">*Requires Firefox Browser - <a href="https://www.mozilla.org/firefox/new/" target="_blank">Download Firefox</a></p>
+        </div>
+        <div class="hero-carousel">
+          <img src="img/screenshots/jobrelay-dashboard.png" alt="JobRelay Dashboard" class="hero-image active">
+          <img src="img/screenshots/jobrelay-search.png" alt="JobRelay Search Tool" class="hero-image">
+          <img src="img/screenshots/jobrelay-ai.png" alt="JobRelay AI Prompts" class="hero-image">
+          <img src="img/screenshots/jobrelay-profile.png" alt="JobRelay Profile" class="hero-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem-Solution Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-2">Why Job Seekers Need JobRelay</h2>
+      <div class="problem-solution">
+        <div class="card problem-card">
+          <h3>Tired of Applying Without Response?</h3>
+          <p><strong>Problem:</strong> Job boards are overcrowded with hundreds of applicants for each position</p>
+          <p><strong>Solution:</strong> JobRelay helps you find hidden opportunities before they're publicly posted</p>
+          <p><strong>Result:</strong> Less competition, higher response rates, faster job offers</p>
+        </div>
+        <div class="card problem-card">
+          <h3>Make Every Application Count</h3>
+          <p><strong>Problem:</strong> Generic applications get lost in the shuffle</p>
+          <p><strong>Solution:</strong> Create perfectly tailored CVs and cover letters using AI</p>
+          <p><strong>Result:</strong> Stand out to recruiters and significantly increase your interview chances</p>
+        </div>
+        <div class="card problem-card">
+          <h3>Stay Organized, Never Miss an Opportunity</h3>
+          <p><strong>Problem:</strong> Job searching across multiple sites becomes chaotic</p>
+          <p><strong>Solution:</strong> Automatically track applications, deadlines, and follow-ups in one place</p>
+          <p><strong>Result:</strong> Professional follow-through that impresses employers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="text-center mb-4">Key Features</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+          <div class="feature-content">
+            <h3>Hidden Opportunity Search</h3>
+            <p>Generate powerful search formulas that find jobs before they hit mainstream job boards. Target specific company career pages, applicant tracking systems, and companies showing growth signals.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M21.2 8A10 10 0 0 0 17 3.8"></path><path d="M3.8 17A10 10 0 0 0 8 21.2"></path></svg>
+          </div>
+          <div class="feature-content">
+            <h3>AI-Assisted Application Creation</h3>
+            <p>Create perfectly tailored applications with specialized prompts for ChatGPT or Claude. Transform your generic resume into a targeted application that perfectly matches each job description.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 14V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12"></path><circle cx="18" cy="18" r="4"></circle><path d="M18 16v4"></path><path d="M16 18h4"></path></svg>
+          </div>
+          <div class="feature-content">
+            <h3>Automatic Job Detection</h3>
+            <p>JobRelay detects when you're viewing a job listing and extracts key information. Save interesting positions with one click and track your entire application process.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+          </div>
+          <div class="feature-content">
+            <h3>Application Tracking System</h3>
+            <p>Keep all your applications organized in one place. Set reminders for follow-ups, track statuses, and never forget about an opportunity again.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div class="feature-content">
+            <h3>Resume Repository</h3>
+            <p>Store your resume data securely for quick access when applying to jobs. Import your existing resume using AI tools in minutes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Steps -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-4">Getting Started with JobRelay</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Install Firefox</h4>
+            <p>JobRelay is currently available exclusively for Firefox <a href="https://www.mozilla.org/firefox/new/" target="_blank">Download Firefox</a></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Add the Extension</h4>
+            <p>Click the "Install JobRelay" button at the top or bottom of this page</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Import Your Resume</h4>
+            <p>Use our AI-assisted import tool to set up your profile in minutes</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Start Discovering Hidden Jobs</h4>
+            <p>Generate your first search queries and find opportunities others miss</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="text-center mb-4">Why Job Seekers Love JobRelay</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <p><strong>Find More Opportunities:</strong> Discover jobs that never reach mainstream job boards</p>
+        </div>
+        <div class="benefit">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <p><strong>Save Time:</strong> Stop endlessly scrolling job boards and focus on quality applications</p>
+        </div>
+        <div class="benefit">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <p><strong>Increased Response Rate:</strong> Stand out with perfectly tailored applications</p>
+        </div>
+        <div class="benefit">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <p><strong>Stay Organized:</strong> Track everything in one place without spreadsheets</p>
+        </div>
+        <div class="benefit">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <p><strong>Land Interviews Faster:</strong> Our users report getting interviews within days, not weeks</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-4">Success Stories</h2>
+      <div class="testimonials">
+        <div class="card testimonial">
+          <div class="testimonial-content">
+            "I found a role at a startup that wasn't even posted publicly yet. The search tool led me to their careers page, and I was the first applicant!"
+          </div>
+          <div class="testimonial-author">- Sarah M.</div>
+        </div>
+        <div class="card testimonial">
+          <div class="testimonial-content">
+            "The AI prompts helped me create a cover letter that perfectly matched what the company was looking for. Got called for an interview the next day!"
+          </div>
+          <div class="testimonial-author">- James O.</div>
+        </div>
+        <div class="card testimonial">
+          <div class="testimonial-content">
+            "I was applying to 20+ jobs with no responses. With JobRelay's tailored approach, I got 3 interviews in my first week."
+          </div>
+          <div class="testimonial-author">- Ade T.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question">Is JobRelay really free? What's the catch?</div>
+          <div class="faq-answer">JobRelay is completely free. Many job search tools charge for resume templates, CV tailoring, and interview prep guides, but we believe these resources should be accessible to everyone. There's no catch - we're on a mission to help people find better jobs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do I need to pay for ChatGPT or Claude to use the AI features?</div>
+          <div class="faq-answer">No. You can use the free versions of either AI tool with our prompts.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How does JobRelay find hidden jobs?</div>
+          <div class="faq-answer">We use advanced search techniques that target company career pages, specific applicant tracking systems, and recent company growth signals that indicate hiring.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">I'm getting rejected from jobs. How can JobRelay help?</div>
+          <div class="faq-answer">Our AI prompts help you customize your resume and cover letter to highlight relevant skills for each job, significantly increasing your chances of getting interviews.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How many jobs can I track with JobRelay?</div>
+          <div class="faq-answer">There's no limit! Track as many applications as you need.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">I'm not tech-savvy. Is JobRelay complicated to use?</div>
+          <div class="faq-answer">Not at all! We've designed JobRelay to be incredibly user-friendly with clear instructions at every step.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Start Your Smarter Job Search Today</h2>
+        <div class="value-proposition">
+          <p class="highlight">Get professional job search tools for free that others charge for:</p>
+          <ul class="feature-list">
+            <li>✓ Advanced search formulas to find hidden jobs</li>
+            <li>✓ AI-powered CV and cover letter customization</li>
+            <li>✓ Professional interview preparation guides</li>
+            <li>✓ Comprehensive application tracking system</li>
+          </ul>
+        </div>
+        <div class="cta-buttons">
+          <a href="https://addons.mozilla.org/en-US/firefox/addon/jobrelay/" class="button" target="_blank">Install JobRelay for Firefox</a>
+          <a href="https://growthclinic.xyz/job-search-accelerator" class="button button-secondary">Learn About Job Search Accelerator</a>
+        </div>
+        <p class="firefox-required">*Remember: JobRelay requires Firefox Browser - <a href="https://www.mozilla.org/firefox/new/" target="_blank">Download Firefox</a></p>
+        <p>Discover hidden opportunities. Create perfect applications. Land your dream job faster.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <div class="footer-wrap">
+    <div class="footer-top">
+        <div class="footer__brand">
+            <img src="img/gc-logo.svg" alt="growth clinic logo" style="height: 40px;">
+
+            <p>
+                Empowering individuals and communities with personalized mental models
+                to grow their career, business and finance.
+            </p>
+
+            <h6>
+                Subscribe to our newsletter to stay updated.
+                We don't spam.
+            </h6>
+
+            <button class="footer-button" onclick="window.location.href='https://eepurl.com/dsyom1'">
+                subscribe
+            </button>
+        </div>
+        <div class="footer__link">
+            <div class="footer__link-section">
+                <h6>Programs</h6>
+                <ul>
+                    <li class="footer__link-item"><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
+                    <li class="footer__link-item"><a href="career-accelerator.html">Career Accelerator</a></li>
+                    <li class="footer__link-item"><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                    <li class="footer__link-item"><a href="hangouts.html">Hangouts</a></li>
+                    <li class="footer__link-item"><a href="about.html">About</a></li>
+                    <li class="footer__link-item"><a href="mailto: growthclinic@gmail.com?subject = I have an enquiry about Growth Clinic">Contact</a>
+                    </li>
+                    <li class="footer__link-item"><a href="https://medium.com/growthclinic">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer__link-section">
+                <h6>Follow us</h6>
+                <ul>
+                    <li class="footer__link-item"><a href="https://www.linkedin.com/company/growthclinic/">LinkedIn</a></li>
+                    <li class="footer__link-item"><a href="https://twitter.com/growthclinic">Twitter</a></li>
+                    <li class="footer__link-item"><a href="https://community.growthclinic.xyz/">Discourse</a></li>
+                    <li class="footer__link-item"><a href="https://www.instagram.com/growthclinic/">Instagram</a></li>
+                    <li class="footer__link-item"><a href="https://www.facebook.com/growthclinicNG">Facebook</a></li>
+                    <li class="footer__link-item"><a href="https://www.youtube.com/@GrowthClinic_">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="copyright">
+            Copyright © 2023 - <script>document.write(new Date().getFullYear())</script> Growth Clinic,
+            All rights reserved. Made with Love 💚
+        </p>
+
+        <ul class="footer__sub-menu">
+            <li><a href="https://community.growthclinic.xyz/tos" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+            <li><a href="https://community.growthclinic.xyz/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+        </ul>
+    </div>
+  </div>
+</body>
+<script>
+  // Simple carousel functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.hero-carousel .hero-image');
+    let currentIndex = 0;
+    
+    function nextImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
+    
+    // Change image every 5 seconds
+    setInterval(nextImage, 5000);
+  });
+</script>
+</html>
