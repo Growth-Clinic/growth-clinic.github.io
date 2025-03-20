@@ -873,18 +873,228 @@
         margin-left: 0;
       }
     }
+
+    /* Additional navbar styles */
+    .navbar-container {
+      width: 100%;
+      position: relative;
+    }
+
+    .navbar-logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-item {
+      margin: 0 1.5rem;
+      position: relative;
+    }
+
+    .navbar-item a {
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: var(--gc-black);
+      transition: color 0.3s ease;
+    }
+
+    .navbar-item a:hover {
+      color: var(--gc-pastel);
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+    }
+
+    .dropdown-arrow {
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border-radius: 0.8rem;
+      box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
+      padding: 1.2rem;
+      min-width: 20rem;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1rem);
+      transition: all 0.3s ease;
+      list-style: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu li {
+      margin: 0.8rem 0;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.6rem;
+      border-radius: 0.4rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: rgba(32, 191, 85, 0.1);
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 3rem;
+      height: 2.4rem;
+      cursor: pointer;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      height: 0.3rem;
+      width: 100%;
+      background-color: var(--gc-black);
+      border-radius: 0.3rem;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 100%;
+      background-color: #fff;
+      padding: 2rem;
+      border-top: 0.1rem solid #eee;
+    }
+
+    .mobile-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-item {
+      margin: 1.5rem 0;
+    }
+
+    .mobile-item a {
+      font-size: 1.8rem;
+      color: var(--gc-black);
+      text-decoration: none;
+    }
+
+    .mobile-item .dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      padding: 1rem 0 0 2rem;
+      min-width: auto;
+    }
+
+    .mobile-item.dropdown .dropdown-menu {
+      display: none;
+    }
+
+    .mobile-item.dropdown.active .dropdown-menu {
+      display: block;
+    }
+
+    @media (max-width: 992px) {
+      .navbar-menu {
+        display: none;
+      }
+      
+      .mobile-toggle {
+        display: flex;
+      }
+      
+      .mobile-menu.active {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="container">
-      <nav class="navbar">
-        <a href="https://growthclinic.xyz">
-          <img src="img/gc-logo.svg" alt="Growth Clinic" class="logo">
-        </a>
-        <a href="#cta" class="button">Install JobRelay</a>
-      </nav>
+      <div class="navbar-container">
+        <nav class="navbar">
+          <!-- Logo -->
+          <div class="navbar-logo-container">
+            <a href="index.html">
+              <img class="navbar-logo" src="img/gc-logo.svg" height="40px" alt="Growth Clinic Logo">
+            </a>
+          </div>
+          
+          <!-- Desktop Menu -->
+          <div class="navbar-menu">
+            <ul class="navbar-links">
+              <li class="navbar-item dropdown">
+                <a href="#" class="dropdown-toggle">Programs <span class="dropdown-arrow">▼</span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
+                  <li><a href="career-accelerator.html">Career Accelerator</a></li>
+                  <li><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                  <li style="border-top: 1px solid #E5E5E5; margin-top: 8px; padding-top: 8px;"><a href="jobrelay.html">JobRelay Extension <span style="background-color: #20BF55; color: white; font-size: 10px; padding: 2px 6px; border-radius: 10px; margin-left: 5px;">FREE</span></a></li>
+                </ul>
+              </li>
+              <li class="navbar-item"><a href="hangouts.html">Hangouts</a></li>
+              <li class="navbar-item"><a href="about.html">About</a></li>
+              <li class="navbar-item"><a href="mailto:growthclinic@gmail.com">Contact</a></li>
+            </ul>
+            
+            <a href="#cta" class="button">Install JobRelay</a>
+          </div>
+          
+          <!-- Mobile Menu Toggle -->
+          <div class="mobile-toggle" id="mobile-nav-trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="mobile-menu" id="mobile-nav-menu">
+          <ul class="mobile-links">
+            <li class="mobile-item dropdown">
+              <a href="#" class="dropdown-toggle">Programs <span class="dropdown-arrow">▼</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="job-search-accelerator.html">Job Search Accelerator</a></li>
+                <li><a href="career-accelerator.html">Career Accelerator</a></li>
+                <li><a href="side-project-accelerator.html">Side Project Accelerator</a></li>
+                <li style="border-top: 1px solid #E5E5E5; margin-top: 8px; padding-top: 8px;"><a href="jobrelay.html">JobRelay Extension <span style="background-color: #20BF55; color: white; font-size: 10px; padding: 2px 6px; border-radius: 10px; margin-left: 5px;">FREE</span></a></li>
+              </ul>
+            </li>
+            <li class="mobile-item"><a href="hangouts.html">Hangouts</a></li>
+            <li class="mobile-item"><a href="about.html">About</a></li>
+            <li class="mobile-item"><a href="mailto:growthclinic@gmail.com">Contact</a></li>
+            <li class="mobile-item"><a href="#cta" class="button">Install JobRelay</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -1347,6 +1557,35 @@
         const tabId = this.getAttribute('data-tab');
         document.getElementById(tabId).classList.add('active');
       });
+    });
+  });
+</script>
+<!-- Mobile menu functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileNavTrigger = document.getElementById('mobile-nav-trigger');
+    const mobileNavMenu = document.getElementById('mobile-nav-menu');
+    
+    if (mobileNavTrigger && mobileNavMenu) {
+      mobileNavTrigger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileNavMenu.classList.toggle('active');
+      });
+    }
+    
+    // Mobile dropdown toggle
+    const mobileDropdowns = document.querySelectorAll('.mobile-item.dropdown');
+    
+    mobileDropdowns.forEach(dropdown => {
+      const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+      
+      if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+        });
+      }
     });
   });
 </script>
