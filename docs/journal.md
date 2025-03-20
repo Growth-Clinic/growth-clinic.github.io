@@ -1,0 +1,22 @@
+## 20 March 2025
+
+### 16:54
+
+I have finished adding transferable skills prompt and I realise that there ia a need to create a How-To guide for the extension on the jobrelay landing page. The guide should be in like a collapsable section of the landing page so it doesn't make the page longer, maybe not collapsable, maybe something else, I don't know. The guide should talk about the different tips to make the most of it as I don't want to suffer to fix them as the tool is free and it is taking too much time. It should talk about how after defininig your career goals, you should Save It, after importing your CV with JSON, you should go back and save it, how once you're ready to generate an ai prompt and have followed the other how-tos there, you should click the refresh button to load cv and career goal data, and how after adding any new info and you want to use the AI prompts, always click the refresh button first.
+
+I also want to add somewhere a link to join the telegram community for job seekers for free where we can help them some more, so I can get people using the extension funneled somewhere. It should be visible but not intrusive, and the community would be very helpful for them even where we'd give more free help.
+
+After this, I want to work on the Job Accelerator detail and program content to improve the webpage and the program content. For the webpage I need to edit it so it shows what is happening within the weeks and that these are tied to solving key problems job seekers are having, like for instance, the flow a senior HR told me was, users job seeking would first need to identify the job they want to get, then define their skills, then define which of their current skills are transferable or what roles their current skills can be transferred or used in (and this can also include informal work like hobbies and the likes), then use these to define their CV and improve their Linkedin and also improve or professionalise the rest of their online presence if needed. Then they can start job searching, optimising their CV and cover letter and applying. I'd need to update the program to capture this and the web page to show that we are really doing this. Then in the interview prep part, also teach users how to research and do small talk, be confident and enter with high energy, as well as the other key parts. I'll have to submit the webpage to Claude to come up with the content for it, and in another chat, work on the program material to improve it and ensure all of this is captured.
+
+The next tool I want to work on is a tool that helps users prepare successfully for the job market one that automatically takes users through this flow, users job seeking would first need to :
+
+1. identify the job they want to get, 
+2. define their skills, 
+3. define which of their current skills are transferable or what roles their current skills can be transferred or used in (and this can also include informal work like hobbies and the likes), 
+4. use these to define their CV and improve their Linkedin and also improve or professionalise the rest of their online presence if needed
+
+It may not be in this order, but Claude can help order it well, and then design a simple tool that acts like a pathfinder and CV creator and LinkedIn profile optimiser all in one. I wonder what the best way to do this simple would be? We'd need the user to provide some info, and in defining their skills, they may not be able to tell us clearly, so we need easy to answer questions that once they answer, we can infer their skills. We'd most likely need whatever CV they have now, or a description of the work they have done so far, and a way to see their current LinkedIn page or we just give them general guide as all of this would be used to create a super prompt they can use to paste in Claude to get out what their skills are, how they transfer to the job role they want, how they apply to said job role, and a CV that captures all of this and presents them professionally. The tool would also be by Growth Clinic and also link to the Telegram community.
+
+Also, I want to create more job posts for Growth Clinic to increase my Employer Branding and also as a way to source potential clients as I'd jump on a call and interview all of them to indirectly demo what we do to them as part of the interview, and learn from them.
+
+All of these raw text should be sendable to Claude per each section and what we are working on.

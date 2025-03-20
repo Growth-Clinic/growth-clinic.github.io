@@ -725,6 +725,154 @@
         font-size: 1.75rem;
       }
     }
+
+    /* How-To Section Styling */
+    .how-to-tabs {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .tab-navigation {
+      display: flex;
+      border-bottom: 1px solid #eee;
+      background-color: #f5f5f5;
+    }
+
+    .tab-button {
+      padding: 12px 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      color: #555;
+      flex: 1;
+      transition: all 0.3s ease;
+    }
+
+    .tab-button:hover {
+      background-color: rgba(32, 191, 85, 0.05);
+    }
+
+    .tab-button.active {
+      background-color: #fff;
+      color: var(--gc-pastel);
+      border-bottom: 2px solid var(--gc-pastel);
+    }
+
+    .tab-content {
+      padding: 0;
+    }
+
+    .tab-pane {
+      display: none;
+      padding: 25px;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    .steps-list {
+      padding-left: 25px;
+      margin-bottom: 20px;
+    }
+
+    .steps-list li {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .tip-box {
+      background-color: rgba(32, 191, 85, 0.1);
+      border-left: 3px solid var(--gc-pastel);
+      padding: 15px 20px;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+
+    .tip-box h4 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: var(--gc-pastel);
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Community Banner Styling */
+    .community-banner {
+      margin-top: 40px;
+      background: linear-gradient(135deg, var(--gc-dartmouth), var(--gc-pastel));
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 25px 30px;
+    }
+
+    .banner-text {
+      color: white;
+      flex: 1;
+    }
+
+    .banner-text h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .banner-text p {
+      margin-bottom: 0;
+      opacity: 0.9;
+    }
+
+    .community-banner .button {
+      background-color: white;
+      color: var(--gc-pastel);
+      margin-left: 20px;
+      white-space: nowrap;
+    }
+
+    .community-banner .button:hover {
+      background-color: var(--gc-pastel);
+      color: white;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .tab-navigation {
+        flex-wrap: wrap;
+      }
+      
+      .tab-button {
+        flex: 1 0 33%;
+      }
+      
+      .banner-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .banner-text {
+        margin-bottom: 15px;
+      }
+      
+      .community-banner .button {
+        margin-left: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -971,6 +1119,115 @@
     </div>
   </section>
 
+  <!-- How-To Guide Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-4">Getting the Most from JobRelay</h2>
+      <p class="text-center mb-4">Follow these tips to maximize your job search success with JobRelay</p>
+      
+      <div class="how-to-tabs">
+        <div class="tab-navigation">
+          <button class="tab-button active" data-tab="setup">Getting Started</button>
+          <button class="tab-button" data-tab="resume">Resume Setup</button>
+          <button class="tab-button" data-tab="goals">Career Goals</button>
+          <button class="tab-button" data-tab="search">Search Tool</button>
+          <button class="tab-button" data-tab="ai">AI Prompts</button>
+        </div>
+        
+        <div class="tab-content">
+          <!-- Getting Started Tab -->
+          <div class="tab-pane active" id="setup">
+            <h3>Setting Up JobRelay</h3>
+            <ol class="steps-list">
+              <li><strong>Install the extension</strong> from the Firefox Add-ons Store</li>
+              <li><strong>Click the JobRelay icon</strong> in your browser toolbar to open the dashboard</li>
+              <li><strong>Set up your profile</strong> first (resume data and career goals)</li>
+              <li><strong>Explore the tools</strong> - Search, AI Prompts, and Application Tracking</li>
+            </ol>
+            <div class="tip-box">
+              <h4>Pro Tip</h4>
+              <p>Complete your profile 100% to unlock all features of JobRelay. This includes your personal info, experience, skills, and career goals.</p>
+            </div>
+          </div>
+          
+          <!-- Resume Setup Tab -->
+          <div class="tab-pane" id="resume">
+            <h3>Setting Up Your Resume</h3>
+            <ol class="steps-list">
+              <li><strong>Import with AI</strong> - Upload your resume to ChatGPT/Claude using our prompt</li>
+              <li><strong>Paste the JSON</strong> into the import field</li>
+              <li><strong>Click "Import from JSON"</strong> to load your resume data</li>
+              <li><strong>Important: Click "Save Resume Data"</strong> after reviewing or making changes</li>
+            </ol>
+            <div class="tip-box">
+              <h4>Common Mistake</h4>
+              <p>Many users forget to click "Save Resume Data" after importing their CV. Always save after importing or making changes!</p>
+            </div>
+          </div>
+          
+          <!-- Career Goals Tab -->
+          <div class="tab-pane" id="goals">
+            <h3>Defining Your Career Goals</h3>
+            <ol class="steps-list">
+              <li><strong>Navigate to the Profile tab</strong> and find the Career Goals section</li>
+              <li><strong>Select your transition type</strong> - new job, role change, industry change, etc.</li>
+              <li><strong>Enter your target roles</strong> - be specific about positions you're seeking</li>
+              <li><strong>Enter your target locations</strong> - list cities or regions of interest</li>
+              <li><strong>Important: Click "Save Career Goals"</strong> to store your preferences</li>
+            </ol>
+            <div class="tip-box">
+              <h4>Why This Matters</h4>
+              <p>Your career goals personalize the Search Tool and AI Prompts features, making them much more effective for your specific situation.</p>
+            </div>
+          </div>
+          
+          <!-- Search Tool Tab -->
+          <div class="tab-pane" id="search">
+            <h3>Using the Search Tool</h3>
+            <ol class="steps-list">
+              <li><strong>Navigate to the Search Tool tab</strong></li>
+              <li><strong>Click "Load from Career Goals"</strong> to automatically fill your preferences</li>
+              <li><strong>Adjust any specific parameters</strong> as needed</li>
+              <li><strong>Click "Generate Search Formulas"</strong> to create powerful search queries</li>
+              <li><strong>Copy or click "Open"</strong> to use these formulas directly</li>
+            </ol>
+            <div class="tip-box">
+              <h4>Hidden Job Tip</h4>
+              <p>The "Company Career Pages" search is particularly effective for finding jobs that aren't posted on major job boards!</p>
+            </div>
+          </div>
+          
+          <!-- AI Prompts Tab -->
+          <div class="tab-pane" id="ai">
+            <h3>Getting Perfect AI Prompts</h3>
+            <ol class="steps-list">
+              <li><strong>Navigate to the AI Prompts tab</strong></li>
+              <li><strong>Load a job description</strong> from a current page or saved application</li>
+              <li><strong>Important: Click the refresh button (↻)</strong> to update the prompt with your latest profile data</li>
+              <li><strong>Select the prompt type</strong> - Transferable Skills, CV Tailoring, etc.</li>
+              <li><strong>Copy the generated prompt</strong> and paste it into ChatGPT or Claude</li>
+            </ol>
+            <div class="tip-box">
+              <h4>Remember</h4>
+              <p>Always click the refresh button (↻) after updating your profile or when switching between prompt types to ensure the latest data is incorporated!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Community Banner -->
+      <div class="community-banner">
+        <div class="banner-content">
+          <div class="banner-text">
+            <h3>Join Our Free Job Seekers Community</h3>
+            <p>Get additional support, share experiences, and receive free guidance from our experts</p>
+          </div>
+          <a href="https://t.me/+JFsNShZkO1U5ZmRk" class="button" target="_blank">Join Telegram Community</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="cta" id="cta">
     <div class="container">
@@ -1070,6 +1327,27 @@
     
     // Change image every 5 seconds
     setInterval(nextImage, 5000);
+  });
+</script>
+
+<script>
+  // Tab switching functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all tabs
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabPanes.forEach(pane => pane.classList.remove('active'));
+        
+        // Add active class to current tab
+        this.classList.add('active');
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
   });
 </script>
 </html>
