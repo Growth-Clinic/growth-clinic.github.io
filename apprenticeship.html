@@ -149,12 +149,6 @@
                         <h4>Framework Access</h4>
                         <p>Access to proprietary frameworks and tools normally only available to paid programme participants</p>
                     </div>
-                    
-                    <div class="value-item">
-                        <img src="img/gc-illustration/agile.svg" alt="Certification">
-                        <h4>Certificate of Completion</h4>
-                        <p>Receive documentation of your acquired skills and contributions</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -167,53 +161,213 @@
                 A structured, transformative experience designed to build your expertise in personalised frameworks
             </p>
         
-            <div class="learning-exp-img-wrap">
-                <div class="skill-img">
-                    <img src="img/gc-illustration/creative.svg" alt="Learning Phase">
-                    <p><strong>Month 1: Learning Phase</strong></p>
-                    <p class="framework-description">Weekly 1-hour training sessions covering core mental models</p>
-                    <p class="framework-description">Self-paced learning assignments applying frameworks to your own challenges</p>
-                    <p class="framework-description">Shadow experienced team members during client interactions</p>
-                    <p class="framework-description">Weekly reflection exercises to personalise frameworks</p>
+            <!-- Custom styling for the 3-month journey cards -->
+            <style>
+                .journey-cards-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    margin-top: 4rem;
+                    width: 100%;
+                }
+                
+                .journey-card {
+                    background-color: rgba(255, 255, 255, 0.15);
+                    border-radius: 1rem;
+                    padding: 2rem;
+                    width: 100%;
+                }
+                
+                .journey-card-header {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 2rem;
+                }
+                
+                .journey-card-header img {
+                    height: 6rem;
+                    width: 6rem;
+                    background-color: white;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    margin-right: 2rem;
+                }
+                
+                .journey-card-header h3 {
+                    color: white;
+                    font-size: 2.4rem;
+                    font-weight: 600;
+                }
+                
+                .journey-card-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                
+                .journey-card-item {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border-radius: 0.5rem;
+                    padding: 1.2rem;
+                    color: white;
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                }
+                
+                @media screen and (max-width: 768px) {
+                    .journey-card-header {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                    
+                    .journey-card-header img {
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                    }
+                }
+            </style>
+            
+            <div class="journey-cards-container">
+                <!-- Month 1 Card -->
+                <div class="journey-card">
+                    <div class="journey-card-header">
+                        <img src="img/gc-illustration/creative.svg" alt="Learning Phase">
+                        <h3>Month 1: Learning Phase</h3>
+                    </div>
+                    <div class="journey-card-content">
+                        <div class="journey-card-item">
+                            Weekly 1-hour training sessions covering core mental models
+                        </div>
+                        <div class="journey-card-item">
+                            Self-paced learning assignments applying frameworks to your own challenges
+                        </div>
+                        <div class="journey-card-item">
+                            Shadow experienced team members during client interactions
+                        </div>
+                        <div class="journey-card-item">
+                            Weekly reflection exercises to personalise frameworks
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="skill-img">
-                    <img src="img/gc-illustration/analytical.svg" alt="Application Phase">
-                    <p><strong>Month 2: Application Phase</strong></p>
-                    <p class="framework-description">Apply learned frameworks to a specific Growth Clinic project</p>
-                    <p class="framework-description">Receive detailed feedback and guidance on your implementation</p>
-                    <p class="framework-description">Develop practical skills in adapting frameworks for different contexts</p>
-                    <p class="framework-description">Create a case study for your professional portfolio</p>
+                <!-- Month 2 Card -->
+                <div class="journey-card">
+                    <div class="journey-card-header">
+                        <img src="img/gc-illustration/analytical.svg" alt="Application Phase">
+                        <h3>Month 2: Application Phase</h3>
+                    </div>
+                    <div class="journey-card-content">
+                        <div class="journey-card-item">
+                            Apply learned frameworks to a specific Growth Clinic project
+                        </div>
+                        <div class="journey-card-item">
+                            Receive detailed feedback and guidance on your implementation
+                        </div>
+                        <div class="journey-card-item">
+                            Develop practical skills in adapting frameworks for different contexts
+                        </div>
+                        <div class="journey-card-item">
+                            Create a case study for your professional portfolio
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="skill-img">
-                    <img src="img/gc-illustration/business.svg" alt="Contribution Phase">
-                    <p><strong>Month 3: Contribution Phase</strong></p>
-                    <p class="framework-description">Lead a defined micro-project aligned with business needs</p>
-                    <p class="framework-description">Present results and lessons learned to the Growth Clinic team</p>
-                    <p class="framework-description">Document your personal framework adaptations</p>
-                    <p class="framework-description">Create transition plan for ongoing relationship with Growth Clinic</p>
+                <!-- Month 3 Card -->
+                <div class="journey-card">
+                    <div class="journey-card-header">
+                        <img src="img/gc-illustration/business.svg" alt="Contribution Phase">
+                        <h3>Month 3: Contribution Phase</h3>
+                    </div>
+                    <div class="journey-card-content">
+                        <div class="journey-card-item">
+                            Lead a defined micro-project aligned with business needs
+                        </div>
+                        <div class="journey-card-item">
+                            Present results and lessons learned to the Growth Clinic team
+                        </div>
+                        <div class="journey-card-item">
+                            Document your personal framework adaptations
+                        </div>
+                        <div class="journey-card-item">
+                            Create transition plan for ongoing relationship with Growth Clinic
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Free Tools Section -->
-            <div style="margin-top: 4rem; background-color: rgba(255, 255, 255, 0.2); padding: 3rem; border-radius: 1.6rem;">
-                <h3 style="color: white; font-size: 2.8rem; margin-bottom: 2rem; text-align: center;">Time Commitment & Compensation</h3>
+            <!-- Time Commitment & Compensation Section -->
+            <style>
+                .commitment-section {
+                    margin-top: 4rem;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    padding: 3rem;
+                    border-radius: 1.6rem;
+                    width: 100%;
+                }
                 
-                <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-                    <div style="flex: 1; min-width: 250px; max-width: 350px; background-color: rgba(255, 255, 255, 0.15); padding: 2rem; border-radius: 1rem;">
-                        <h4 style="color: white; font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Time Investment</h4>
-                        <p style="color: white; font-size: 1.6rem; margin-bottom: 1rem; text-align: center;">5-10 hours weekly (flexible scheduling)</p>
-                        <p style="color: white; font-size: 1.6rem; margin-bottom: 1rem; text-align: center;">Weekly check-in calls with your mentor</p>
-                        <p style="color: white; font-size: 1.6rem; margin-bottom: 1rem; text-align: center;">Self-directed learning and project work</p>
+                .commitment-header {
+                    color: white;
+                    font-size: 2.8rem;
+                    margin-bottom: 2rem;
+                    text-align: center;
+                }
+                
+                .commitment-cards {
+                    display: flex;
+                    gap: 2rem;
+                    width: 100%;
+                }
+                
+                .commitment-card {
+                    flex: 1;
+                    background-color: rgba(255, 255, 255, 0.15);
+                    padding: 2rem;
+                    border-radius: 1rem;
+                }
+                
+                .commitment-card-title {
+                    color: white;
+                    font-size: 2.2rem;
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                }
+                
+                .commitment-card-item {
+                    color: white;
+                    font-size: 1.6rem;
+                    margin-bottom: 1rem;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    padding: 1.2rem;
+                    border-radius: 0.5rem;
+                }
+                
+                @media screen and (max-width: 768px) {
+                    .commitment-cards {
+                        flex-direction: column;
+                    }
+                }
+            </style>
+            
+            <div class="commitment-section">
+                <h3 class="commitment-header">Time Commitment & Compensation</h3>
+                
+                <div class="commitment-cards">
+                    <div class="commitment-card">
+                        <h4 class="commitment-card-title">Time Investment</h4>
+                        <div class="commitment-card-item">Minimum 10 hours weekly (flexible scheduling)</div>
+                        <div class="commitment-card-item">Weekly check-in calls with your mentor</div>
+                        <div class="commitment-card-item">Self-directed learning and project work</div>
                     </div>
-                    <div style="flex: 1; min-width: 250px; max-width: 350px; background-color: rgba(255, 255, 255, 0.15); padding: 2rem; border-radius: 1rem;">
-                        <h4 style="color: white; font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Compensation Structure</h4>
-                        <p style="color: white; font-size: 1.6rem; margin-bottom: 1rem; text-align: center;">Non-paid position with clear learning outcomes</p>
-                        <p style="color: white; font-size: 1.6rem; margin-bottom: 1rem; text-align: center;">Opportunity to earn commissions on any clients referred</p>
-                        <p style="color: white; font-size: 1.6rem; margin-bottom: 1rem; text-align: center;">Full access to frameworks and tools valued at ₦75,000</p>
+                    
+                    <div class="commitment-card">
+                        <h4 class="commitment-card-title">Compensation Structure</h4>
+                        <div class="commitment-card-item">Non-paid position with clear learning outcomes</div>
+                        <div class="commitment-card-item">Opportunity to earn commissions on any clients referred</div>
+                        <div class="commitment-card-item">Full access to frameworks and tools valued at $100</div>
                     </div>
                 </div>
+                
+                <p style="color: white; text-align: center; margin-top: 2rem; font-size: 1.6rem;">Limited to a maximum of 3 exceptional applicants per cohort</p>
             </div>
         </div>
 
@@ -221,24 +375,78 @@
         <div class="grey-section">
             <h4 class="grey-section-header">Ideal Candidates</h4>
             
-            <div class="program-exp-wrap" style="background-color: transparent; padding: 2rem 0 6rem;">
-                <ul style="width: 90%; margin: 0 auto;">
-                    <li>
-                        <strong>Professionals seeking to develop expertise in personalised mental models</strong>
-                    </li>
-                    <li>
-                        <strong>Self-motivated learners committed to consistent participation</strong>
-                    </li>
-                    <li>
-                        <strong>Individuals with strong communication and critical thinking skills</strong>
-                    </li>
-                    <li>
-                        <strong>Those interested in career development, coaching, or training fields</strong>
-                    </li>
-                </ul>
+            <style>
+                .ideal-candidates-list {
+                    width: 90%;
+                    margin: 4rem auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2.5rem;
+                }
+                
+                .candidate-item {
+                    display: flex;
+                    align-items: center;
+                    font-size: 2rem;
+                    line-height: 2.8rem;
+                    color: #1D1E2C;
+                }
+                
+                .candidate-item:before {
+                    content: "•";
+                    color: #098743;
+                    font-size: 3rem;
+                    margin-right: 1.5rem;
+                    display: inline-block;
+                }
+                
+                @media screen and (max-width: 768px) {
+                    .candidate-item {
+                        font-size: 1.8rem;
+                        line-height: 2.4rem;
+                    }
+                    
+                    .candidate-item:before {
+                        font-size: 2.4rem;
+                        margin-right: 1rem;
+                    }
+                }
+            </style>
+            
+            <div class="ideal-candidates-list">
+                <div class="candidate-item">
+                    <strong>Professionals seeking to develop expertise in personalised mental models</strong>
+                </div>
+                <div class="candidate-item">
+                    <strong>Self-motivated learners committed to consistent participation</strong>
+                </div>
+                <div class="candidate-item">
+                    <strong>Individuals with strong communication and critical thinking skills</strong>
+                </div>
+                <div class="candidate-item">
+                    <strong>Those interested in career development, coaching, or training fields</strong>
+                </div>
             </div>
             
-            <div class="growth-process__callout">
+            <style>
+                .apprenticeship-callout {
+                    border-radius: 2.4rem;
+                    background: #098743;
+                    padding: 4rem;
+                    margin-top: 4rem;
+                    width: 100%;
+                }
+                
+                .apprenticeship-callout h5 {
+                    color: #FFF;
+                    text-align: center;
+                    font-size: 3rem;
+                    font-weight: 700;
+                    line-height: 4.2rem;
+                }
+            </style>
+            
+            <div class="apprenticeship-callout">
                 <h5>
                     Our apprenticeship is a learning opportunity, not just unpaid work. We're committed to providing real value through direct mentorship, portfolio-building projects, and exclusive access to our proprietary frameworks.
                 </h5>
@@ -284,12 +492,12 @@
             <div style="max-width: 900px; margin: 0 auto;">
                 <div style="margin-bottom: 4rem;">
                     <h3 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: #098743;">Is this a paid position?</h3>
-                    <p style="font-size: 1.8rem; line-height: 2.8rem;">No, this is an unpaid apprenticeship focused on learning and skill development. However, you'll receive access to frameworks and tools valued at ₦75,000 and opportunities to earn commissions through referrals.</p>
+                    <p style="font-size: 1.8rem; line-height: 2.8rem;">No, this is an unpaid apprenticeship focused on learning and skill development. However, you'll receive access to frameworks and tools valued at $100 and opportunities to earn commissions through referrals.</p>
                 </div>
                 
                 <div style="margin-bottom: 4rem;">
                     <h3 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: #098743;">How flexible is the time commitment?</h3>
-                    <p style="font-size: 1.8rem; line-height: 2.8rem;">The programme requires 5-10 hours weekly, which can be scheduled flexibly around your other commitments. There will be some fixed times for weekly check-ins, but most work can be completed on your own schedule.</p>
+                    <p style="font-size: 1.8rem; line-height: 2.8rem;">The programme requires minimum 10 hours weekly, which can be scheduled flexibly around your other commitments. There will be some fixed times for weekly check-ins, but most work can be completed on your own schedule.</p>
                 </div>
                 
                 <div style="margin-bottom: 4rem;">
