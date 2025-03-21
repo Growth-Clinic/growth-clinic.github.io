@@ -982,7 +982,8 @@ html {
 
 .learning-exp {
     padding: 8rem 12rem;
-    margin-top: 4rem;
+    margin-top: 60px;
+    padding-top: 30px;
     background-color: #098743;
     margin-bottom: 12rem;
 }
