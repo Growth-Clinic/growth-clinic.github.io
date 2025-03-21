@@ -1833,11 +1833,16 @@ html {
         font-size: 12px;
         max-width: 95%;
     }
+    
+    .framework-description strong {
+        color: #20BF55;
+    }
 
     .skill-img {
         width: 100% !important;
         max-width: 100% !important;
         margin-bottom: 2rem;
+        padding: 20px;
     }
 
     .skill-img img {
