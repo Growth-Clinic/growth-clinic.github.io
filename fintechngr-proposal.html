@@ -9,13 +9,16 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <style>
         /* Additional custom styling for proposal */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
         .proposal-container {
             max-width: 1000px;
-            margin: 100px auto;
+            margin: 0 auto;
             padding: 40px;
             background-color: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
         }
         
         .header-section {
@@ -45,7 +48,7 @@
         
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-top: 20px;
         }
@@ -133,20 +136,10 @@
             color: #3D3D3D;
         }
         
-        .contact-info {
-            margin-top: 10px;
-        }
-        
-        .contact-info p {
-            margin: 5px 0;
-            font-size: 1.6rem;
-            color: #3D3D3D;
-        }
-        
         .timeline-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background-color: #f9f9f9;
             padding: 15px;
             border-radius: 8px;
@@ -202,6 +195,8 @@
         
         .feature-list {
             margin: 20px 0;
+            padding-left: 0;
+            list-style: none;
         }
         
         .feature-list li {
@@ -229,6 +224,50 @@
             background-color: rgba(9, 135, 67, 0.05);
             border-radius: 12px;
         }
+        
+        /* Page break control */
+        .page {
+            page-break-after: always;
+            min-height: 1100px;
+            position: relative;
+            padding-bottom: 40px;
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .bullet-list {
+            margin: 15px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .bullet-list li {
+            font-size: 1.6rem;
+            color: #3D3D3D;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .bullet-list li:before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            top: 0;
+            color: #098743;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
 
         @media print {
             body {
@@ -236,331 +275,365 @@
                 print-color-adjust: exact;
             }
             
-            .proposal-container {
+            .page {
                 margin: 0;
-                padding: 20px;
+                padding: 40px;
                 box-shadow: none;
             }
             
             @page {
                 size: A4;
-                margin: 1cm;
+                margin: 0.5cm;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="proposal-container">
-        <div class="header-section">
-            <div>
-                <h1 class="hero-header-text" style="font-size: 3.6rem;">Proposal for FinTechNGR<br>Membership Portal Redesign</h1>
-                <p class="hero-body-text" style="font-size: 2rem; padding-bottom: 0;">Prepared by Growth Clinic (a subsidiary of Sprimed Technologies Ltd., RC No. 1865608)</p>
-                <p style="font-size: 1.6rem; color: #3D3D3D; margin-top: 5px;">27th March, 2025</p>
+    <!-- PAGE 1 -->
+    <div class="page">
+        <div class="proposal-container">
+            <div class="header-section">
+                <div>
+                    <h1 class="hero-header-text" style="font-size: 3.6rem;">Proposal for FinTechNGR<br>Membership Portal Redesign</h1>
+                    <p class="hero-body-text" style="font-size: 2rem; padding-bottom: 0;">Prepared by Growth Clinic (a subsidiary of Sprimed Technologies Ltd., RC No. 1865608)</p>
+                    <p style="font-size: 1.6rem; color: #3D3D3D; margin-top: 5px;">27th March, 2025</p>
+                </div>
+                <img src="img/gc-logo.svg" alt="Growth Clinic Logo" style="height: 50px;">
             </div>
-            <img src="img/gc-logo.svg" alt="Growth Clinic Logo" style="height: 50px;">
-        </div>
 
-        <div class="company-info">
-            <p><strong>Address:</strong> 1C Ogundele Street, Gbagada, Lagos, Nigeria</p>
-            <p><strong>Contact:</strong> Osioke Itseuwa, Managing Director</p>
-            <p><strong>Email:</strong> osiokeitseuwa@gmail.com</p>
-            <p><strong>Phone:</strong> +234 8138079094</p>
-        </div>
-
-        <h2 class="section-title">Executive Summary</h2>
-        <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D;">
-            Growth Clinic, a subsidiary of Sprimed Technologies Ltd., is pleased to submit this proposal for the redesign of the FinTechNGR Membership Portal. We understand that FinTechNGR aims to enhance its digital presence with a robust, user-friendly platform that effectively serves its growing membership base while aligning with the Association's strategic objectives.
-        </p>
-        <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-top: 15px;">
-            Our proposed solution will deliver a modern, intuitive membership portal that enhances user experience, strengthens member engagement, streamlines administrative processes, and provides valuable analytics. Drawing on our experience in developing membership-based platforms and community portals, we are uniquely positioned to bring FinTechNGR's vision to life.
-        </p>
-
-        <div class="highlight-box">
-            <h3>Our Vision for FinTechNGR Portal</h3>
-            <p>We envision a membership portal that not only serves as an administrative tool but becomes a central hub for engagement, collaboration, and growth within Nigeria's fintech ecosystem. Our approach combines user-centered design with cutting-edge technology to create an exceptional platform that evolves with your needs.</p>
-        </div>
-
-        <h2 class="section-title">Company Overview</h2>
-        <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D;">
-            Growth Clinic is a product development subsidiary of Sprimed Technologies Ltd. (RC No. 1865608), specializing in creating user-centric digital solutions that drive engagement and deliver measurable results. Our expertise spans web application development, user experience design, and digital community platforms.
-        </p>
-
-        <h3 class="section-subtitle">Relevant Experience</h3>
-        
-        <div class="approach-grid">
-            <div class="approach-item">
-                <h4>Membership-Based Learning Platform</h4>
-                <p>We've developed comprehensive membership platforms with sophisticated user onboarding, automated workflows for member management, intuitive dashboard interfaces, and integrated payment processing systems.</p>
+            <div class="company-info">
+                <p><strong>Address:</strong> 1C Ogundele Street, Gbagada, Lagos, Nigeria</p>
+                <p><strong>Contact:</strong> Osioke Itseuwa, Managing Director</p>
+                <p><strong>Email:</strong> osiokeitseuwa@gmail.com</p>
+                <p><strong>Phone:</strong> +234 8138079094</p>
             </div>
+
+            <h2 class="section-title">Executive Summary</h2>
+            <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D;">
+                Growth Clinic, a subsidiary of Sprimed Technologies Ltd., is pleased to submit this proposal for the redesign of the FinTechNGR Membership Portal. We understand that FinTechNGR aims to enhance its digital presence with a robust, user-friendly platform that effectively serves its growing membership base while aligning with the Association's strategic objectives.
+            </p>
+            <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-top: 15px;">
+                Our proposed solution will deliver a modern, intuitive membership portal that enhances user experience, strengthens member engagement, streamlines administrative processes, and provides valuable analytics. Drawing on our experience in developing membership-based platforms and community portals, we are uniquely positioned to bring FinTechNGR's vision to life.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Our Vision for FinTechNGR Portal</h3>
+                <p>We envision a membership portal that not only serves as an administrative tool but becomes a central hub for engagement, collaboration, and growth within Nigeria's fintech ecosystem. Our approach combines user-centered design with cutting-edge technology to create an exceptional platform that evolves with your needs.</p>
+            </div>
+        </div>
+        <div class="page-number">1</div>
+    </div>
+    
+    <!-- PAGE 2 -->
+    <div class="page">
+        <div class="proposal-container">
+            <h2 class="section-title">Company Overview</h2>
+            <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D;">
+                Growth Clinic is a product development subsidiary of Sprimed Technologies Ltd. (RC No. 1865608), specializing in creating user-centric digital solutions that drive engagement and deliver measurable results. Our expertise spans web application development, user experience design, and digital community platforms.
+            </p>
+
+            <h3 class="section-subtitle">Relevant Experience</h3>
             
-            <div class="approach-item">
-                <h4>Discourse Platform Experience</h4>
-                <p>Our team has extensive experience with Discourse's membership management systems, providing insight into community engagement features, role-based permissions, and administrative tools required for membership organizations.</p>
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <h4>Membership-Based Learning Platform</h4>
+                    <p>We've developed comprehensive membership platforms with sophisticated user onboarding, automated workflows for member management, intuitive dashboard interfaces, and integrated payment processing systems.</p>
+                </div>
+                
+                <div class="approach-item">
+                    <h4>Discourse Platform Experience</h4>
+                    <p>Our team has extensive experience with Discourse's membership management systems, providing insight into community engagement features, role-based permissions, and administrative tools required for membership organizations.</p>
+                </div>
+                
+                <div class="approach-item">
+                    <h4>Integrated Digital Solutions</h4>
+                    <p>We've created multi-platform learning management systems with web interfaces and bot integrations, implementing seamless authentication systems, user tracking, and engagement tools to enhance participation and retention.</p>
+                </div>
+                
+                <div class="approach-item">
+                    <h4>Custom Portal Development</h4>
+                    <p>Our expertise includes developing custom portals with sophisticated content management systems, user management features, and analytics dashboards that provide valuable insights into user behavior and engagement.</p>
+                </div>
             </div>
-            
-            <div class="approach-item">
-                <h4>Integrated Digital Solutions</h4>
-                <p>We've created multi-platform learning management systems with web interfaces and bot integrations, implementing seamless authentication systems, user tracking, and engagement tools to enhance participation and retention.</p>
-            </div>
-            
-            <div class="approach-item">
-                <h4>Custom Portal Development</h4>
-                <p>Our expertise includes developing custom portals with sophisticated content management systems, user management features, and analytics dashboards that provide valuable insights into user behavior and engagement.</p>
-            </div>
-        </div>
 
-        <h2 class="section-title">Our Team</h2>
-        
-        <div class="team-grid">
-            <div class="team-member">
-                <h4>Osioke Itseuwa</h4>
-                <p>Product Manager & QA Specialist</p>
-                <p>Experienced product professional responsible for overall project execution, client communication, quality assurance, and delivery.</p>
-            </div>
+            <h2 class="section-title">Our Team</h2>
             
-            <div class="team-member">
-                <h4>Akachi Ogbonna</h4>
-                <p>Lead UX/UI Designer & Senior Frontend Developer</p>
-                <p>Expert in creating intuitive interfaces with experience in React.js, Next.js, and responsive design.</p>
-            </div>
-            
-            <div class="team-member">
-                <h4>Chibuzor Obiora</h4>
-                <p>Senior Backend Developer & DevOps Engineer</p>
-                <p>Specializes in Node.js, API development, database architecture, and cloud infrastructure.</p>
-            </div>
-        </div>
-
-        <h2 class="section-title">Project Understanding and Approach</h2>
-        
-        <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D;">
-            Based on the RFP, we understand that FinTechNGR aims to create a modern membership portal that serves as the primary hub for members, facilitating networking, resource sharing, event management, and community engagement, while providing administrators with efficient tools for membership management.
-        </p>
-        
-        <h3 class="section-subtitle">Key Portal Features</h3>
-        
-        <ul class="feature-list">
-            <li>Enhanced UI/UX with an intuitive interface that simplifies navigation</li>
-            <li>Improved functionality with features that cater to evolving member needs</li>
-            <li>Modern design that reflects FinTechNGR's brand identity</li>
-            <li>Full mobile responsiveness across all devices</li>
-            <li>Streamlined membership onboarding and engagement processes</li>
-            <li>Efficient administrative tools for membership management</li>
-            <li>Seamless integration with existing systems</li>
-            <li>Robust security measures and accessibility features</li>
-            <li>Comprehensive analytics on member activities</li>
-        </ul>
-        
-        <h3 class="section-subtitle">Methodology</h3>
-        
-        <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-bottom: 20px;">
-            Our project approach follows a user-centered design methodology combined with agile development practices:
-        </p>
-        
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4 class="timeline-title">Discovery Phase</h4>
-                <p class="timeline-desc">Stakeholder interviews, user research, technical audit, and project planning</p>
-            </div>
-            <div class="timeline-period">Weeks 1-3</div>
-        </div>
-        
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4 class="timeline-title">Design Phase</h4>
-                <p class="timeline-desc">Information architecture, wireframes, mockups, prototypes, and user testing</p>
-            </div>
-            <div class="timeline-period">Weeks 4-9</div>
-        </div>
-        
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4 class="timeline-title">Development Phase</h4>
-                <p class="timeline-desc">Frontend and backend development, integration, and content migration planning</p>
-            </div>
-            <div class="timeline-period">Weeks 10-19</div>
-        </div>
-        
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4 class="timeline-title">Testing Phase</h4>
-                <p class="timeline-desc">Comprehensive functional, security, performance, and accessibility testing</p>
-            </div>
-            <div class="timeline-period">Weeks 20-21</div>
-        </div>
-        
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4 class="timeline-title">Deployment Phase</h4>
-                <p class="timeline-desc">Production setup, data migration, staff training, and quality assurance</p>
-            </div>
-            <div class="timeline-period">Weeks 22-23</div>
-        </div>
-        
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4 class="timeline-title">Post-Launch Support</h4>
-                <p class="timeline-desc">Monitoring, bug fixes, user feedback collection, and performance optimization</p>
-            </div>
-            <div class="timeline-period">Week 24+</div>
-        </div>
-
-        <h2 class="section-title">Technical Solution</h2>
-        
-        <h3 class="section-subtitle">Technology Stack</h3>
-        
-        <div class="approach-grid">
-            <div class="approach-item">
-                <h4>Frontend</h4>
-                <p>React.js with Next.js, Tailwind CSS, Redux, TypeScript</p>
-            </div>
-            
-            <div class="approach-item">
-                <h4>Backend</h4>
-                <p>Node.js with Express, PostgreSQL, Redis, JWT authentication</p>
-            </div>
-            
-            <div class="approach-item">
-                <h4>DevOps</h4>
-                <p>AWS cloud infrastructure, Docker containers, GitHub Actions for CI/CD</p>
-            </div>
-            
-            <div class="approach-item">
-                <h4>Integrations</h4>
-                <p>RESTful APIs, Paystack/Flutterwave, SendGrid, AWS S3</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Osioke Itseuwa</h4>
+                    <p>Product Manager & QA Specialist</p>
+                    <p>Experienced product professional responsible for overall project execution, client communication, quality assurance, and delivery.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Akachi Ogbonna</h4>
+                    <p>Lead UX/UI Designer & Senior Frontend Developer</p>
+                    <p>Expert in creating intuitive interfaces with experience in React.js, Next.js, and responsive design.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Chibuzor Obiora</h4>
+                    <p>Senior Backend Developer & DevOps Engineer</p>
+                    <p>Specializes in Node.js, API development, database architecture, and cloud infrastructure.</p>
+                </div>
             </div>
         </div>
-        
-        <h3 class="section-subtitle">Key Functionality</h3>
-        
-        <ul class="feature-list">
-            <li>Personalized member dashboards with activity feeds and recommendations</li>
-            <li>Comprehensive member profile management and networking directory</li>
-            <li>Event discovery, registration, and management tools</li>
-            <li>Resource library with advanced search and filtering capabilities</li>
-            <li>Community forums with topic categories and notification systems</li>
-            <li>Automated onboarding and renewal workflows for administrators</li>
-            <li>Analytics dashboard with key metrics and exportable reports</li>
-            <li>Integrated payment processing and financial reporting</li>
-        </ul>
-
-        <h2 class="section-title">Cost Proposal</h2>
-        
-        <table class="cost-table">
-            <thead>
-                <tr>
-                    <th>Phase</th>
-                    <th>Description</th>
-                    <th>Cost (₦)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Discovery & Planning</td>
-                    <td>Stakeholder interviews, user research, technical audit</td>
-                    <td>₦3,200,000</td>
-                </tr>
-                <tr>
-                    <td>Design</td>
-                    <td>Wireframes, mockups, prototypes, testing</td>
-                    <td>₦4,200,000</td>
-                </tr>
-                <tr>
-                    <td>Frontend Development</td>
-                    <td>UI implementation, responsive design, testing</td>
-                    <td>₦5,500,000</td>
-                </tr>
-                <tr>
-                    <td>Backend Development</td>
-                    <td>API development, database design, integrations</td>
-                    <td>₦4,800,000</td>
-                </tr>
-                <tr>
-                    <td>Testing & QA</td>
-                    <td>Functional, security, performance testing</td>
-                    <td>₦1,800,000</td>
-                </tr>
-                <tr>
-                    <td>Deployment & Training</td>
-                    <td>Launch preparation, training, documentation</td>
-                    <td>₦1,500,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Total Project Cost</strong></td>
-                    <td></td>
-                    <td><strong>₦21,000,000</strong></td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <h3 class="section-subtitle">Payment Schedule</h3>
-        
-        <ul class="feature-list">
-            <li>25% upon contract signing (₦5,250,000)</li>
-            <li>25% upon completion of design phase (₦5,250,000)</li>
-            <li>25% upon completion of development phase (₦5,250,000)</li>
-            <li>15% upon successful testing and acceptance (₦3,150,000)</li>
-            <li>10% upon launch and handover (₦2,100,000)</li>
-        </ul>
-        
-        <h3 class="section-subtitle">Annual Maintenance Package (Optional)</h3>
-        
-        <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-bottom: 15px;">
-            We recommend a maintenance and support plan following the launch:
-        </p>
-        
-        <ul class="feature-list">
-            <li>Regular security updates and patches</li>
-            <li>Bug fixes and minor enhancements</li>
-            <li>Performance monitoring and optimization</li>
-            <li>Technical support (8am-6pm, Monday-Friday)</li>
-            <li>Quarterly review meetings</li>
-        </ul>
-        
-        <p style="font-size: 1.8rem; font-weight: 600; color: #098743; margin-top: 15px;">
-            Annual Cost: ₦2,500,000
-        </p>
-
-        <h2 class="section-title">Security and Compliance</h2>
-        
-        <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D;">
-            Our development practices ensure compliance with:
-        </p>
-        
-        <ul class="feature-list">
-            <li>Nigeria Data Protection Regulation (NDPR)</li>
-            <li>General Data Protection Regulation (GDPR) principles</li>
-            <li>PCI DSS for payment processing</li>
-            <li>Industry standard security protocols</li>
-        </ul>
-        
-        <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-top: 15px;">
-            Our security measures include data encryption at rest and in transit, secure coding practices, regular security audits, and comprehensive penetration testing.
-        </p>
-
-        <div class="conclusion">
-            <h2 class="section-title" style="margin-top: 0;">Conclusion</h2>
+        <div class="page-number">2</div>
+    </div>
+    
+    <!-- PAGE 3 -->
+    <div class="page">
+        <div class="proposal-container">
+            <h2 class="section-title">Project Understanding and Approach</h2>
             
             <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D;">
-                Growth Clinic is excited about the opportunity to partner with FinTechNGR on this strategic initiative. We believe our experience with membership platforms, community engagement solutions, and user-centered design makes us uniquely qualified to deliver a portal that exceeds your expectations.
+                Based on the RFP, we understand that FinTechNGR aims to create a modern membership portal that serves as the primary hub for members, facilitating networking, resource sharing, event management, and community engagement, while providing administrators with efficient tools for membership management.
             </p>
             
-            <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-top: 15px;">
-                Our approach focuses on creating a seamless, engaging experience for members while providing powerful tools for administrators. The redesigned portal will strengthen FinTechNGR's digital presence and support your mission of fostering collaboration, innovation, and advocacy within Nigeria's fintech ecosystem.
+            <h3 class="section-subtitle">Key Portal Features</h3>
+            
+            <ul class="feature-list">
+                <li>Enhanced UI/UX with an intuitive interface that simplifies navigation</li>
+                <li>Improved functionality with features that cater to evolving member needs</li>
+                <li>Modern design that reflects FinTechNGR's brand identity</li>
+                <li>Full mobile responsiveness across all devices</li>
+                <li>Streamlined membership onboarding and engagement processes</li>
+                <li>Efficient administrative tools for membership management</li>
+                <li>Seamless integration with existing systems</li>
+                <li>Robust security measures and accessibility features</li>
+                <li>Comprehensive analytics on member activities</li>
+            </ul>
+            
+            <h3 class="section-subtitle">Methodology</h3>
+            
+            <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-bottom: 20px;">
+                Our project approach follows a user-centered design methodology combined with agile development practices:
             </p>
             
-            <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-top: 15px;">
-                We look forward to the possibility of collaborating with FinTechNGR and are available to answer any questions or provide additional information as needed.
-            </p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="timeline-title">Discovery Phase</h4>
+                    <p class="timeline-desc">Stakeholder interviews, user research, technical audit, and project planning</p>
+                </div>
+                <div class="timeline-period">Weeks 1-3</div>
+            </div>
             
-            <div style="margin-top: 30px;">
-                <p style="font-size: 1.8rem; font-weight: 600; color: #1D1E2C;">Sincerely,</p>
-                <p style="font-size: 1.8rem; color: #1D1E2C; margin-top: 10px;">Osioke Itseuwa</p>
-                <p style="font-size: 1.6rem; color: #3D3D3D;">Product Manager & Managing Director</p>
-                <p style="font-size: 1.6rem; color: #3D3D3D;">Growth Clinic, a subsidiary of Sprimed Technologies Ltd.</p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="timeline-title">Design Phase</h4>
+                    <p class="timeline-desc">Information architecture, wireframes, mockups, prototypes, and user testing</p>
+                </div>
+                <div class="timeline-period">Weeks 4-9</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="timeline-title">Development Phase</h4>
+                    <p class="timeline-desc">Frontend and backend development, integration, and content migration planning</p>
+                </div>
+                <div class="timeline-period">Weeks 10-19</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="timeline-title">Testing Phase</h4>
+                    <p class="timeline-desc">Comprehensive functional, security, performance, and accessibility testing</p>
+                </div>
+                <div class="timeline-period">Weeks 20-21</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="timeline-title">Deployment Phase</h4>
+                    <p class="timeline-desc">Production setup, data migration, staff training, and quality assurance</p>
+                </div>
+                <div class="timeline-period">Weeks 22-23</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="timeline-title">Post-Launch Support</h4>
+                    <p class="timeline-desc">Monitoring, bug fixes, user feedback collection, and performance optimization</p>
+                </div>
+                <div class="timeline-period">Week 24+</div>
             </div>
         </div>
+        <div class="page-number">3</div>
+    </div>
+    
+    <!-- PAGE 4 -->
+    <div class="page">
+        <div class="proposal-container">
+            <h2 class="section-title">Technical Solution</h2>
+            
+            <h3 class="section-subtitle">Technology Stack</h3>
+            
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <h4>Frontend</h4>
+                    <p>React.js with Next.js, Tailwind CSS, Redux, TypeScript</p>
+                </div>
+                
+                <div class="approach-item">
+                    <h4>Backend</h4>
+                    <p>Node.js with Express, PostgreSQL, Redis, JWT authentication</p>
+                </div>
+                
+                <div class="approach-item">
+                    <h4>DevOps</h4>
+                    <p>AWS cloud infrastructure, Docker containers, GitHub Actions for CI/CD</p>
+                </div>
+                
+                <div class="approach-item">
+                    <h4>Integrations</h4>
+                    <p>RESTful APIs, Paystack/Flutterwave, SendGrid, AWS S3</p>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">Key Functionality</h3>
+            
+            <ul class="feature-list">
+                <li>Personalized member dashboards with activity feeds and recommendations</li>
+                <li>Comprehensive member profile management and networking directory</li>
+                <li>Event discovery, registration, and management tools</li>
+                <li>Resource library with advanced search and filtering capabilities</li>
+                <li>Community forums with topic categories and notification systems</li>
+                <li>Automated onboarding and renewal workflows for administrators</li>
+                <li>Analytics dashboard with key metrics and exportable reports</li>
+                <li>Integrated payment processing and financial reporting</li>
+            </ul>
+        </div>
+        <div class="page-number">4</div>
+    </div>
+    
+    <!-- PAGE 5 -->
+    <div class="page">
+        <div class="proposal-container">
+            <h2 class="section-title">Cost Proposal</h2>
+            
+            <table class="cost-table">
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Description</th>
+                        <th>Cost (₦)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Discovery & Planning</td>
+                        <td>Stakeholder interviews, user research, technical audit</td>
+                        <td>₦3,200,000</td>
+                    </tr>
+                    <tr>
+                        <td>Design</td>
+                        <td>Wireframes, mockups, prototypes, testing</td>
+                        <td>₦4,200,000</td>
+                    </tr>
+                    <tr>
+                        <td>Frontend Development</td>
+                        <td>UI implementation, responsive design, testing</td>
+                        <td>₦5,500,000</td>
+                    </tr>
+                    <tr>
+                        <td>Backend Development</td>
+                        <td>API development, database design, integrations</td>
+                        <td>₦4,800,000</td>
+                    </tr>
+                    <tr>
+                        <td>Testing & QA</td>
+                        <td>Functional, security, performance testing</td>
+                        <td>₦1,800,000</td>
+                    </tr>
+                    <tr>
+                        <td>Deployment & Training</td>
+                        <td>Launch preparation, training, documentation</td>
+                        <td>₦1,500,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Project Cost</strong></td>
+                        <td></td>
+                        <td><strong>₦21,000,000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="section-subtitle">Payment Schedule</h3>
+            
+            <ul class="bullet-list">
+                <li>25% upon contract signing (₦5,250,000)</li>
+                <li>25% upon completion of design phase (₦5,250,000)</li>
+                <li>25% upon completion of development phase (₦5,250,000)</li>
+                <li>15% upon successful testing and acceptance (₦3,150,000)</li>
+                <li>10% upon launch and handover (₦2,100,000)</li>
+            </ul>
+            
+            <h3 class="section-subtitle">Annual Maintenance Package (Optional)</h3>
+            
+            <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-bottom: 15px;">
+                We recommend a maintenance and support plan following the launch:
+            </p>
+            
+            <ul class="bullet-list">
+                <li>Regular security updates and patches</li>
+                <li>Bug fixes and minor enhancements</li>
+                <li>Performance monitoring and optimization</li>
+                <li>Technical support (8am-6pm, Monday-Friday)</li>
+                <li>Quarterly review meetings</li>
+            </ul>
+            
+            <p style="font-size: 1.8rem; font-weight: 600; color: #098743; margin-top: 15px;">
+                Annual Cost: ₦2,500,000
+            </p>
+        </div>
+        <div class="page-number">5</div>
+    </div>
+    
+    <!-- PAGE 6 -->
+    <div class="page">
+        <div class="proposal-container">
+            <h2 class="section-title">Security and Compliance</h2>
+            
+            <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D;">
+                Our development practices ensure compliance with:
+            </p>
+            
+            <ul class="bullet-list">
+                <li>Nigeria Data Protection Regulation (NDPR)</li>
+                <li>General Data Protection Regulation (GDPR) principles</li>
+                <li>PCI DSS for payment processing</li>
+                <li>Industry standard security protocols</li>
+            </ul>
+            
+            <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-top: 15px;">
+                Our security measures include data encryption at rest and in transit, secure coding practices, regular security audits, and comprehensive penetration testing.
+            </p>
+
+            <div class="conclusion">
+                <h2 class="section-title" style="margin-top: 0;">Conclusion</h2>
+                
+                <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D;">
+                    Growth Clinic is excited about the opportunity to partner with FinTechNGR on this strategic initiative. We believe our experience with membership platforms, community engagement solutions, and user-centered design makes us uniquely qualified to deliver a portal that exceeds your expectations.
+                </p>
+                
+                <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-top: 15px;">
+                    Our approach focuses on creating a seamless, engaging experience for members while providing powerful tools for administrators. The redesigned portal will strengthen FinTechNGR's digital presence and support your mission of fostering collaboration, innovation, and advocacy within Nigeria's fintech ecosystem.
+                </p>
+                
+                <p style="font-size: 1.8rem; line-height: 2.6rem; color: #3D3D3D; margin-top: 15px;">
+                    We look forward to the possibility of collaborating with FinTechNGR and are available to answer any questions or provide additional information as needed.
+                </p>
+                
+                <div style="margin-top: 30px;">
+                    <p style="font-size: 1.8rem; font-weight: 600; color: #1D1E2C;">Sincerely,</p>
+                    <p style="font-size: 1.8rem; color: #1D1E2C; margin-top: 10px;">Osioke Itseuwa</p>
+                    <p style="font-size: 1.6rem; color: #3D3D3D;">Product Manager & Managing Director</p>
+                    <p style="font-size: 1.6rem; color: #3D3D3D;">Growth Clinic, a subsidiary of Sprimed Technologies Ltd.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">6</div>
     </div>
 </body>
 
