@@ -1,0 +1,477 @@
+/* Additional styles for the new Growth Clinic homepage */
+/* This file contains only styles that don't duplicate those in main.css */
+
+.container {
+    /* Keep only 'margin: 0 auto;' as max-width is already defined in main.css */
+    margin: 0 auto;
+}
+
+.two-paths-section {
+    margin: 6rem 0;
+}
+
+.path-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+}
+
+.path-card {
+    flex: 1;
+    background-color: #fafafa;
+    border-radius: 2.4rem;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.path-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.path-card img {
+    height: 12rem;
+    margin-bottom: 2rem;
+}
+
+.path-card h3 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #1D1E2C;
+    font-weight: 700;
+}
+
+.path-card p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    color: #3D3D3D;
+}
+
+.how-it-works {
+    padding: 8rem 0;
+    background-color: rgba(32, 191, 85, 0.05);
+    border-radius: 2.4rem;
+    margin: 6rem 0;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.step-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.step-number {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: #20BF55;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.step-item h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #1D1E2C;
+    font-weight: 600;
+}
+
+.step-item p {
+    font-size: 1.6rem;
+    color: #3D3D3D;
+}
+
+.product-section {
+    margin: 8rem 0;
+    padding: 6rem;
+    border-radius: 2.4rem;
+    background-color: #fafafa;
+}
+
+.product-content {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 1.6rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-list {
+    margin: 3rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.feature-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgba(32, 191, 85, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.feature-icon svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: #20BF55;
+}
+
+.feature-text {
+    font-size: 1.8rem;
+    color: #3D3D3D;
+}
+
+.program-cards {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.program-card {
+    flex: 1;
+    background-color: white;
+    border-radius: 1.6rem;
+    padding: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+.program-card h4 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #1D1E2C;
+    font-weight: 600;
+}
+
+.program-card p {
+    font-size: 1.6rem;
+    color: #3D3D3D;
+    margin-bottom: 2rem;
+}
+
+.success-stories {
+    margin: 8rem 0;
+    text-align: center;
+}
+
+.video-container {
+    margin-top: 4rem;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 1.6rem;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.unique-approach {
+    margin: 8rem 0;
+}
+
+.approach-cards {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.approach-card {
+    flex: 1;
+    background-color: #fafafa;
+    border-radius: 1.6rem;
+    padding: 3rem;
+    text-align: center;
+}
+
+.approach-card img {
+    height: 8rem;
+    margin-bottom: 2rem;
+}
+
+.approach-card h4 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #1D1E2C;
+    font-weight: 600;
+}
+
+.approach-card p {
+    font-size: 1.6rem;
+    color: #3D3D3D;
+}
+
+.final-cta {
+    margin: 8rem 0;
+    padding: 6rem;
+    background-color: rgba(32, 191, 85, 0.05);
+    border-radius: 2.4rem;
+    text-align: center;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+/* Section IDs for navigation */
+#jobhunter-section,
+#programs-section,
+#final-cta {
+    scroll-margin-top: 100px;
+}
+
+/* Problem-Solution Section Styling */
+.problem-solution-section {
+    padding: 8rem 0;
+    background-color: rgba(32, 191, 85, 0.05);
+    border-radius: 2.4rem;
+    margin: 6rem 0;
+}
+
+.problem-solution-content {
+    padding: 0 6rem;
+    margin-top: 4rem;
+}
+
+.problem-block {
+    margin-bottom: 6rem;
+}
+
+.problem-block h3, 
+.solution-block h3 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #1D1E2C;
+    font-weight: 600;
+    text-align: center;
+}
+
+.challenge-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.challenge-list li {
+    display: flex;
+    align-items: center; /* Centers text vertically with icon */
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.challenge-icon {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    background-color: rgba(240, 149, 36, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    flex-shrink: 0;
+    margin-top: 0; /* Ensures icon doesn't have top margin */
+}
+
+.challenge-icon svg {
+    width: 2rem;
+    height: 2rem;
+    fill: #F09524;
+}
+
+.challenge-list li p {
+    font-size: 1.8rem;
+    color: #3D3D3D;
+    margin: 0;
+}
+
+.section-connector {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 2.4rem;
+    color: #1D1E2C;
+    margin-bottom: 4rem;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-subheader {
+    text-align: center;
+    font-size: 2rem;
+    max-width: 80rem;
+    margin: 2rem auto 4rem;
+    color: #3D3D3D;
+}
+
+/* Adjust footer brand button alignment */
+.footer__brand .hero-button {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Responsive adjustments for new sections */
+@media screen and (max-width: 992px) {
+    .path-cards-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .steps-container {
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    .step-item {
+        max-width: 100%;
+    }
+    
+    .product-content {
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    .program-cards {
+        flex-direction: column;
+    }
+    
+    .approach-cards {
+        flex-direction: column;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .path-card {
+        padding: 3rem;
+    }
+    
+    .path-card img {
+        height: 8rem;
+    }
+    
+    .how-it-works {
+        padding: 4rem 0;
+    }
+    
+    .product-section {
+        padding: 3rem;
+    }
+    
+    .problem-solution-content {
+        padding: 0 3rem;
+    }
+    
+    .challenge-list li {
+        padding: 1.5rem;
+    }
+    
+    .problem-block h3, 
+    .solution-block h3 {
+        font-size: 2.2rem;
+    }
+    
+    .challenge-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .section-connector {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .section-subheader {
+        font-size: 1.8rem;
+        margin: 1.5rem auto 3rem;
+    }
+}
+
+/* Specifically target the hero section button group to align left */
+.hero-content .hero-button-group {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;  /* Aligns content to the left */
+}
+
+.hero-content .hero-button-group .hero-button {
+    margin-left: 0;               /* Removes any auto margin that might center it */
+    margin-right: auto;           /* Pushes everything to the left */
+}
+
+/* Ensure the button itself doesn't have any conflicting styles */
+.hero-content .hero-button {
+    /* Retain other styles but explicitly set margins */
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .hero-content .hero-button-group,
+    .hero-content .hero-button {
+        width: 100%;  /* Full width on mobile */
+    }
+}

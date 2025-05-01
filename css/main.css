@@ -523,6 +523,7 @@ html {
     padding: 0 12rem;
     margin-top: 12rem;
     justify-content: space-between;
+    gap: 6rem;
     align-items: center;
     margin-bottom: 8rem;
 }
